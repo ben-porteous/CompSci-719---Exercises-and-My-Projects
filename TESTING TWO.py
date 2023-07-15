@@ -8,3 +8,6 @@ print('Test 6')
 
 print('Test 7')
 print('Test 8')
+
+print(9)
+print(10)
