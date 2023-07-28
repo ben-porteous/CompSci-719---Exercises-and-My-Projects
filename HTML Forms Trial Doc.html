@@ -23,16 +23,36 @@
         <legend><strong>Registration:</strong></legend>
         <form>
             <label for="first-name">First Name:</label><br>
-            <input type="text" id="first-name" name="f-name" size="20"><br>
+            <input type="text" id="first-name" name="registration" size="20"><br>
             <label for="last-name">Last Name:</label><br>
-            <input type="text" id="last-name" name="l-name" size="20"><br>
+            <input type="text" id="last-name" name="registration" size="20"><br>
             <label for="email">Contact Email:</label><br>
-            <input type="email" id="email" name="e-mail" size="20"><br>
+            <input type="email" id="email" name="registration" size="20"><br>
             <label for="username-new">User Name:</label><br>
-            <input type="text" id="username-new" name="u-name-new" size="20"><br>
+            <input type="text" id="username-new" name="registration" size="20"><br>
             <label for="password-new">Password:</label><br>
-            <input type="password" id="password-new" name="p-word-new" size="20">
+            <input type="password" id="password-new" name="registration" size="20">
         </form>
+    </fieldset>
+
+    <fieldset>
+        <legend><h3>Checkboxes and Radio Buttons: Favorite Animals</h3></legend>
+        <label><input type="checkbox" name="dinosaur"id="t-rex" value="t-rex">T-Rex</label>
+        <label><input type="checkbox" name="dinosaur" id="triceratops" value="triceratops">Triceratops</label>
+        <label><input type="checkbox" name="dinosaur"id="stegasaurus" value="stegasaurus">Stegasaurus</label>
+        <!-- 
+            Note how in the login example we have Label and then Input, whereas checkboxes we can include the input within the Label. 
+            Note how in the above examples we have used a single name for each section of responses so these are grouped together (registration; dinosaur) 
+            Note how for the checkboxes we need to also note what Value we are sending back to the server when the the user clicks on the individual checkbox
+        -->
+    </fieldset>
+    <hr>
+    <fieldset>
+        <legend><h4>Favorite Dinner - please select one:</h4></legend>
+        <label><input type="radio" name="dinner" id="spaghetti" value="spaghetti">Spaghetti </label>
+        <label><input type="radio" name="dinner" id="pizza" value="pizza" checked>Pizza</label>
+        <label><input type="radio" name="dinner" id="lasagna" value="lasagna">Lasagna</label>
+        <!--Note the pizza is starting off checked because we have noted checked in our input controls-->
     </fieldset>
 
 
