@@ -7,6 +7,7 @@
 </head>
 
 <body>
+    <form action="https://trex-sandwich.com/echo/"> <!-- Wherever data is sent for processing -->
     <h2>HTML User Input; HTML Forms</h2>
     <fieldset>
         <legend><strong>User Login:</strong></legend>
@@ -16,7 +17,7 @@
             <br>
             <label for "password">Password:</label><br>
             <input type="password" id="password" name="p-word" size="30">
-        </form>
+
     </fieldset>
     <hr>
     <fieldset>
@@ -32,11 +33,12 @@
             <input type="text" id="username-new" name="registration" size="20"><br>
             <label for="password-new">Password:</label><br>
             <input type="password" id="password-new" name="registration" size="20">
-        </form>
+
     </fieldset>
 
+    <form>
     <fieldset>
-        <legend><h3>Checkboxes and Radio Buttons: Favorite Animals</h3></legend>
+        <legend><h4>Checkboxes and Radio Buttons: Favorite Animals</h4></legend>
         <label><input type="checkbox" name="dinosaur"id="t-rex" value="t-rex">T-Rex</label>
         <label><input type="checkbox" name="dinosaur" id="triceratops" value="triceratops">Triceratops</label>
         <label><input type="checkbox" name="dinosaur"id="stegasaurus" value="stegasaurus">Stegasaurus</label>
@@ -68,8 +70,21 @@
         </select>
     </fieldset>
 
+    <hr>
+
+    <fieldset>
+        <legend><h4>Additional Comments:</h4></legend>
+        <textarea name="comments" id="identity-comments" rows="4" columns="6">
+        </textarea>
+    </fieldset>
+
+    <hr>
 
 
+    <input type="submit"><br>
+    <input type="reset">
+
+    </form>
 
 
 
