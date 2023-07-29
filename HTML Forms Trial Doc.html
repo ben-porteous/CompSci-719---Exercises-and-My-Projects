@@ -7,22 +7,20 @@
 </head>
 
 <body>
-    <form action="https://trex-sandwich.com/echo/"> <!-- Wherever data is sent for processing -->
+    <form action="https://trex-sandwich.com/echo/" method="GET"> <!-- Where/how data is sent for processing -->
     <h2>HTML User Input; HTML Forms</h2>
     <fieldset>
         <legend><strong>User Login:</strong></legend>
-        <form>
-            <label for "username">Username:</label><br>
-            <input type="text" id="username" name="u-name" size="30"><br>
+            <label for="u-name">Username:</label><br>
+            <input type="text" id="u-name" name="u-name" size="30"><br>
             <br>
-            <label for "password">Password:</label><br>
-            <input type="password" id="password" name="p-word" size="30">
+            <label for="p-word">Password:</label><br>
+            <input type="password" id="p-word" name="p-word" size="30">
 
     </fieldset>
     <hr>
     <fieldset>
         <legend><strong>Registration:</strong></legend>
-        <form>
             <label for="first-name">First Name:</label><br>
             <input type="text" id="first-name" name="registration" size="20"><br>
             <label for="last-name">Last Name:</label><br>
@@ -36,12 +34,11 @@
 
     </fieldset>
 
-    <form>
     <fieldset>
         <legend><h4>Checkboxes and Radio Buttons: Favorite Animals</h4></legend>
-        <label><input type="checkbox" name="dinosaur"id="t-rex" value="t-rex">T-Rex</label>
+        <label><input type="checkbox" name="dinosaur" id="t-rex" value="t-rex">T-Rex</label>
         <label><input type="checkbox" name="dinosaur" id="triceratops" value="triceratops">Triceratops</label>
-        <label><input type="checkbox" name="dinosaur"id="stegasaurus" value="stegasaurus">Stegasaurus</label>
+        <label><input type="checkbox" name="dinosaur" id="stegasaurus" value="stegasaurus">Stegasaurus</label>
         <!-- 
             Note how in the login example we have Label and then Input, whereas checkboxes we can include the input within the Label. 
             Note how in the above examples we have used a single name for each section of responses so these are grouped together (registration; dinosaur) 
@@ -74,7 +71,7 @@
 
     <fieldset>
         <legend><h4>Additional Comments:</h4></legend>
-        <textarea name="comments" id="identity-comments" rows="4" columns="6">
+        <textarea name="comments" id="identity-comments" rows="4" cols="6" required>
         </textarea>
     </fieldset>
 
