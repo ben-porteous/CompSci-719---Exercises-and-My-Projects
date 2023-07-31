@@ -1,13 +1,45 @@
 body {
     background-color: rgb(155, 57, 57);
+    padding: 40px
 }
 
-h2{
+h1{
     font-stretch: extra-expanded;
     color:#ffaaaa;
-    line-height: 70px;
-    border-bottom: 5px dashed peru;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-bottom: 2px dashed peru;
+    font-family: american typewriter;
     text-align: center;
-    
+    font-weight: 350;
+    padding: 20px;
+    padding-bottom: 30px;
+}
+
+h3{
+    color: #ffaaaa;
+    font-weight: 20;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+p{
+    font-family: american typewriter;
+    color: #ffaaaa;
+    font-weight: 350;
+    text-align: left;
+}
+
+#checkboxes {
+    color: 
+    font-family:burlywood;
+}
+
+#first-para {
+    font-family: american typewriter;
+    color: #ffaaaa;
+    font-weight: 350;
+    text-align: center;
+}
+
+#pic1 {
+    padding-top: 50px;
+    padding-bottom: 75px;
 }
