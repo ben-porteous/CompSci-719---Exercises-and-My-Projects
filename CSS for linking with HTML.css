@@ -1,7 +1,13 @@
 body {
-    background-color: rgb(155, 57, 57)
+    background-color: rgb(155, 57, 57);
 }
 
-h2 {
+h2{
     font-stretch: extra-expanded;
+    color:#ffaaaa;
+    line-height: 70px;
+    border-bottom: 5px dashed peru;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    
 }
