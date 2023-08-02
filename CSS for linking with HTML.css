@@ -27,12 +27,7 @@ p{
     text-align: left;
 }
 
-#checkboxes {
-    color: 
-    font-family:burlywood;
-}
-
-#first-para {
+#opening-line {
     font-family: american typewriter;
     color: #ffaaaa;
     font-weight: 350;
@@ -42,4 +37,19 @@ p{
 #pic1 {
     padding-top: 50px;
     padding-bottom: 75px;
+}
+
+#checkboxes {
+    color: #ffaaaa;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: right;
+}
+
+#cbox-para {
+    font-family: american typewriter;
+    color: #ffaaaa;
+    font-weight: 350;
+    text-align: right;
+    padding-left: 100px;
+
 }
