@@ -1,0 +1,17 @@
+h1, h2, h3, h4, strong {
+    color: plum;
+}
+
+h1, h3 {
+    text-align: center;
+}
+
+h2 {
+    text-align: right;
+    border-bottom: lightslategray;
+}
+
+hr {
+    color: lightslategray;
+    border-style: dotted;
+}
