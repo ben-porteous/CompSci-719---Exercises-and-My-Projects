@@ -1,15 +1,6 @@
 # Web Lab &ndash; Intro to CSS
 In this lab, we begin our coverage of CSS.
 
-## Obtaining the code
-Now that you've obtained a copy of this repository through GitHub Classroom's invite, you have your own private version of this repository (i.e. the one you're looking at now)! To clone this repository onto your machine, click the green `Code` button, make sure `HTTPS` is selected, then click the `copy` button to the right of the web URL to copy its value. Then, clone onto your local machine from a terminal, using the `git clone` command.
-
-If this is the first time you've ever cloned a repository on the current machine, you may be asked to enter your GitHub credentials. The "sign in with your browser" option should work just fine. You may need to enter your GitHub username and password, and / or authorize "git credential manager" to access your account. Perform these steps if asked.
-
-Now, you should have a clone of your repository on your local machine, ready to develop!
-
-Remember to commit and push your work regularly for backup purposes.
-
 
 ## Exercise One &ndash; CSS files
 From the  the [`ex01`](./exercises/ex01) folder, locate and modify the file [`tim_berners_lee.html`](./exercises/ex01/tim_berners_lee.html) so that it links to the external style sheet [`style1.css`](./exercises/ex01/style1.css) in the same folder. Look at the webpage in your browser, both before and after you do this.
