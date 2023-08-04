@@ -1,5 +1,6 @@
+
 pre.cursive {
-    font-family: Georgia, serif;
+    font-family: 'Karshan Script', Georgia, serif;
     font-size: 22pt;
     color: purple;
     line-height: 1.5em;
@@ -25,3 +26,9 @@ div#box {
     border-radius: 15px 70px;
     box-shadow: 10px 10px 5px #aa99aa;
 }
+
+@font-face {
+    font-family: 'Karshan Script';
+    src: url(./fonts/kaushan-script/KaushanScript-Regular.otf)
+}
+
