@@ -1,3 +1,7 @@
 input[type="password"] {
     background-color: blue;
 }
+
+* {
+    border: 1px solid black;
+}
