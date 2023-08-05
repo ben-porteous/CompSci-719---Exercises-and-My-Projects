@@ -12,9 +12,6 @@
 *  how to use the 'margin: auto;' property.
 */
 
-* {
-    border: 1px solid black;
-}
 
 body {
     margin: 0px;
@@ -23,10 +20,13 @@ body {
 h1 {
     background-color: #62ded5;
     text-align: center;
+    margin: 0px;
+    padding: 60px;
 }
 
 h2 {
     background-color: #62ded5;
+    text-align: center;
 }
 
 h2 {
@@ -36,6 +36,7 @@ h2 {
 #nav {
     background-color: #338487;
     text-align: right;
+    padding: 40px;
 }
 
 p {
@@ -44,7 +45,8 @@ p {
 
 #container {
     background-color: #62ded5;
-    margin: auto;
+    margin: 0px 500px;
+    padding: 20px 0px;
 }
 
 #nav a {
@@ -52,5 +54,18 @@ p {
 }
 
 img {
-    
+    display: block;
+    margin: auto;
+    width: 50%;
+
+}
+
+.links {
+    padding: 20px;
+    margin: 20px;
+}
+
+.writing {
+    padding: 40px; 
+    margin: 20px 70px;
 }
