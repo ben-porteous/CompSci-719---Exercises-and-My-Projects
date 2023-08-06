@@ -1,9 +1,54 @@
 /* Write the CSS for you answer here */
 * {
     border: 1px solid black;
-    margin: 2px;
 }
 
-img {
-    width: 100%;
+.bground {
+    width: 70%;
+    position: absolute;
 }
+
+.bauble {
+    z-index: 4;
+    position: absolute;
+    /* Position needs to change */
+}
+
+#tree {
+    z-index: 2;
+    top: 20px; 
+}
+
+ #landscape {
+    z-index: 1;
+ }
+
+ #purple {
+    z-index: 3;
+ }
+
+ #
+
+ #red {
+    left: 15%;
+ }
+
+ #blue {
+    left: 20%;
+ }
+
+ #dblue {
+    left: 30%;
+ }
+
+ #green {
+    left: 40%;
+ }
+
+ #orange {
+    left: 50%;
+ }
+
+ #pink {
+    left: 10%;
+ }
