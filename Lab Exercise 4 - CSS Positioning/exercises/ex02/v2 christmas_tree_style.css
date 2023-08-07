@@ -1,0 +1,27 @@
+
+
+/* landscape size w700 × h541 */
+
+#container {
+    height: 541px;
+    border: 2px solid slateblue;
+    position: relative;
+}
+
+.all-backgrounds {
+    position: absolute;
+}
+
+#tree {
+    width: 700px;
+    z-index 2;
+}
+
+#landscape {
+    z-index: 0;
+}
+
+.baubles {
+    position: absolute;
+
+}

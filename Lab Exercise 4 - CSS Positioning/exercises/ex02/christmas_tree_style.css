@@ -5,27 +5,31 @@
 
 #container {
     position: relative;
+    width: 700px;
+    height: 541px;
+    background-color: purple;
 }
 
 .bground {
-    width: 70%;
+    width: 95%;
     position: absolute;
-}
-
-.bauble {
-    z-index: 4;
-    position: absolute;
-    
-    /* Position needs to change */
+    margin: 2.5%;
 }
 
 #tree {
     z-index: 2;
-    top: 20px; 
+    bottom: 0%;
 }
 
  #landscape {
     z-index: 1;
+ }
+
+ /* Baubles: */
+
+ .bauble {
+    z-index: 4;
+    position: absolute;
  }
 
  #purple {
