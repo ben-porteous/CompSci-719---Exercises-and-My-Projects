@@ -1,0 +1,40 @@
+#wrapper {
+    width: 350px;
+    margin: auto;
+    position: relative;
+}
+
+#maze {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 300px;
+    width: 300px;
+    fill: darkgreen;
+    z-index: 1;
+}
+
+#figure {
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 100px;
+    left: 0px;
+    z-index: 2;
+    fill: red;
+    /* svg filled in red, we'll animate this property too */
+    stroke: black;
+    /* black outline to running figure */
+}
+
+#monster {
+    fill: red;
+    fill-opacity: 0.5;
+    /* semi-transparent fill. */
+    height: 40px;
+    width: 80px;
+    position: absolute;
+    top: 100px;
+    left: -100px;
+    z-index: 3;
+}
