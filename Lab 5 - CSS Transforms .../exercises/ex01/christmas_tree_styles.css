@@ -26,6 +26,12 @@ img {
 
 .bauble {
     z-index: 3;
+    transition: transform 1s linear;
+    transition-delay: 0.25s;
+}
+
+.bauble:hover {
+    transform: scale(2);
 }
 
 #red {
@@ -58,3 +64,7 @@ img {
     left: 400px;
     top: 330px;
 }
+
+
+
+
