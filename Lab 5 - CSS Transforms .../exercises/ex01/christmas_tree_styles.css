@@ -26,12 +26,33 @@ img {
 
 .bauble {
     z-index: 3;
-    transition: transform 1s linear;
-    transition-delay: 0.25s;
+    }
+
+#container:hover .bauble{
+    animation-name: dropping;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
 }
 
-.bauble:hover {
-    transform: scale(2);
+@keyframes dropping {
+    0% {
+    }
+    20% {
+        top: 470px;
+    }
+    40% {
+        top: 400px;
+    }
+    60%{
+    top: 470px;
+    }
+    80%{
+    top: 440px;
+    }
+    100% {
+        top: 470px;
+    }
 }
 
 #red {
