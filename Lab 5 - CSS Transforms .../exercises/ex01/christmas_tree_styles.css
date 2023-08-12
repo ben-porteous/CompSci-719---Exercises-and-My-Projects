@@ -33,6 +33,11 @@ img {
     animation-duration: 4s;
     animation-fill-mode: forwards;
     animation-timing-function: ease;
+    z-index: 6;
+}
+
+#container:not(:hover) .bauble {
+    top: 470px;
 }
 
 @keyframes dropping {
