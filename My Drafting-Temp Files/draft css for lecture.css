@@ -5,3 +5,7 @@ input[type="password"] {
 * {
     border: 1px solid black;
 }
+
+#OneBox {
+display: flex;
+}
