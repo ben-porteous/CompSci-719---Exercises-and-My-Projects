@@ -9,16 +9,6 @@
     grid-template-rows: 1fr auto 1fr;
 }
 
-#headings {
-    grid-area: header;
-    display: flex;  /*can use display flex here still as headings are child div tag of the parent element Container which was gridded*/
-    justify-content: space-between;
-    background-color: salmon;
-    padding: 0px 30px;
-    margin: 10px;
-    border: 1px solid black;
-}
- 
 .text {
     background-color: deepskyblue;
     border: 1px black solid;
@@ -34,6 +24,9 @@
     grid-area: text2; }
     
 
+
+
+
 #foot {
     grid-area: footer;
     background-color: plum;
@@ -45,10 +38,15 @@
     margin: 10px; 
 }
 
-
-
-
-
+#headings {
+    grid-area: header;
+    display: flex;  /*can use display flex here still as headings are child div tag of the parent element Container which was gridded*/
+    justify-content: space-between;
+    background-color: salmon;
+    padding: 0px 30px;
+    margin: 10px;
+    border: 1px solid black;
+}
 
 
 
