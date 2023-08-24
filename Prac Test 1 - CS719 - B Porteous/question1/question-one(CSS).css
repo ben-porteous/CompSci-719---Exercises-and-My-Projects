@@ -1,9 +1,35 @@
+
+/* TO DELETE ONCE COMPLETED CSS SHEET*/
 * {
     border: black solid 1px;
-    background-color: aqua;
 }
 
 body {
-    border: black solid 10px;
-    background-color: aqua;
+    background-color: gainsboro;
+
+}
+
+h1, h2 {
+    color: #DBAF27;
+    text-align: center;
+}
+
+p {
+    padding: 25px;
+    background-color: white;
+    margin: 40px 0px;
+    text-align: justify;
+}
+
+#container {
+    background-color: #FFE69A;
+    padding: 40px;
+    width: 70%;
+    margin: auto; /*Check in case just left-right*/
+}
+
+hr {
+    width: 66%;
+    margin: 40px auto;
+    border: 1px dashed #DBAF27;
 }
