@@ -106,4 +106,13 @@ body {
 }
 
 
-
+@media screen and (max-width: 600px) {
+  .card {
+    width: 100%;
+  }
+  .nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
