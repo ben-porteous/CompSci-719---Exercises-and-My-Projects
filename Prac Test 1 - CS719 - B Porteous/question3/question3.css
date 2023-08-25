@@ -20,6 +20,10 @@ body {
 
 #grid-container {
   display: grid;
+  grid-template-areas: 
+  "head head head head"
+  "nav nav nav nav"
+  "lside sidebar cards rside";
 }
 
 .nav {
@@ -28,6 +32,7 @@ body {
   box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-evenly;
+  grid-area: nav;
 }
 
 .nav > a {
@@ -42,6 +47,7 @@ body {
   background-color: #f0e68c;
   text-align: center;
   padding: 40px;
+  grid-area: head;
 }
 
 .side-bar {
@@ -50,6 +56,10 @@ body {
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.1);
   margin: 10px;
+  grid-area: sidebar;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .side-bar > * {
@@ -57,14 +67,13 @@ body {
   background-color: #8e44ad;
   border-radius: 15px;
   padding: 20px;
-  display: block;
-  margin: 50px 20px;
   text-decoration: none;
 } 
 
 .card-container {
   display: flex;
   flex-wrap: wrap;
+  grid-area: cards;
 }
 
 .card, .header, .side-bar {
@@ -92,4 +101,6 @@ body {
   padding: 0px 15px 20px 15px;
   color: #666666;
 }
+
+
 
