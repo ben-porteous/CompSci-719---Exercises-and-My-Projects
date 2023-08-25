@@ -1,8 +1,8 @@
 
 /* TO DELETE ONCE COMPLETED CSS SHEET*/
-* {
+/* * {
     border: black solid 1px;
-}
+} */
 
 @font-face {
     font-family: Roboto Slab;
@@ -57,4 +57,31 @@ hr {
  /*Center this image */
     display: block;
     margin: auto;
+}
+
+ul {
+    margin-left: 10%;
+    font-size: 1.5em;
+}
+
+table {
+    border: 1px solid black;
+    width: 50%;
+    margin-left: auto; 
+    margin-right: auto; /*Perhaps to top/bottom too?*/
+    border-collapse: collapse;
+}
+
+td, th {
+    padding: 5px 15px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+th {
+    background-color: oldlace;
+}
+
+tr:nth-child(odd) {
+    background-color: gainsboro;
 }
