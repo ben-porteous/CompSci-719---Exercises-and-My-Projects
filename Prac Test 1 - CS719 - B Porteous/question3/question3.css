@@ -19,7 +19,7 @@ body {
 }
 
 #grid-container {
-
+  display: grid;
 }
 
 .nav {
