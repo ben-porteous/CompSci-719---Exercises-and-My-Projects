@@ -32,15 +32,6 @@ h1 {
     padding: 0px 80px;
 }
 
-.content {
-    width: 1200px;
-    margin: 0px auto;
-}
-
-.header {
-    position: relative;
-}
-
 .olive {
     width: 50px;
     z-index: 1;
@@ -55,4 +46,34 @@ h1 {
 #oliveg {
     left: -100px;
 }
+
+
+.content {
+    width: 1200px;
+    margin: 0px auto;
+    position: relative;
+}
+
+.k-images {
+    z-index: 1;
+    position: absolute;
+}
+
+#squash {
+    width: 290px;
+    
+}
+
+#kumara {
+    width: 250px;
+}
+
+#jam {
+    width: 100px;
+}
+
+#tomato {
+    width: 60px;
+}
+
 
