@@ -18,13 +18,15 @@ body {
   background-color: #c6c6c6;
 }
 
-#grid-container {
-  display: grid;
-  grid-template-columns: 0.5fr 1.5fr 4fr 0.5fr;
-  grid-template-areas: 
-  "head head head head"
-  "nav nav nav nav"
-  ". sidebar cards .";
+@media screen and (min-width: 1025px) {
+  #grid-container {
+    display: grid;
+    grid-template-columns: 0.5fr 1.5fr 4fr 0.5fr;
+    grid-template-areas: 
+    "head head head head"
+    "nav nav nav nav"
+    ". sidebar cards .";
+  }
 }
 
 .nav {
@@ -68,6 +70,7 @@ body {
   border-radius: 15px;
   padding: 20px;
   text-decoration: none;
+  margin: 30px 15px;
 } 
 
 .card-container {
