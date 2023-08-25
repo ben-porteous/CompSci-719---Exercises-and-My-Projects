@@ -22,15 +22,25 @@ body {
 }
 
 .nav {
-
+  padding: 30px;
+  background-color: #D14836;
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .nav > a {
-
+  color: #49c5b6;
+  text-decoration: none;
+  font-weight: bolder;
 }
 
 .header {
-
+  color: #D14836;
+  font-weight: bolder;
+  background-color: #f0e68c;
+  text-align: center;
+  padding: 40px;
 }
 
 .side-bar {
