@@ -81,4 +81,6 @@ h1 {
     left: 536px;
 }
 
-
+.k-images:hover {
+    scale: 1.2;
+}
