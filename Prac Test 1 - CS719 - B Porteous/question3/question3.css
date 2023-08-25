@@ -14,7 +14,8 @@
 }
 
 body {
-
+  margin: 0px;
+  background-color: #c6c6c6;
 }
 
 #grid-container {
@@ -60,20 +61,24 @@ body {
 }
 
 .card {
-  width: 240px;
-
+    width: 240px;
+    background-color: #f0e68c; 
+    margin: 20px;
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
 }
 
 .card img {
   width: 100%;
-
+  border-radius: 15px 15px 0px 0px;
 }
 
 .card h2 {
-
+  padding: 0px 10px;
 }
 
 .card p {
-
+  padding: 0px 15px 20px 15px;
+  color: #666666;
 }
 
