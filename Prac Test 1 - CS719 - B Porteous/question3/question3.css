@@ -45,15 +45,26 @@ body {
 }
 
 .side-bar {
-
+  background-color: #f0e68c; 
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.1);
+  margin: 10px;
 }
 
 .side-bar > * {
-
+  color: #49c5b6;
+  background-color: #8e44ad;
+  border-radius: 15px;
+  padding: 20px;
+  display: block;
+  margin: 50px 20px;
+  text-decoration: none;
 } 
 
 .card-container {
-
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .card, .header, .side-bar {
