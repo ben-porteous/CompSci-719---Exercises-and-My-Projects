@@ -2,8 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Borel&display=swap');
 
 /* Your code here: */
-* {border: 2px solid black;}
-
 body {
     margin: 0px;
 }
@@ -61,19 +59,26 @@ h1 {
 
 #squash {
     width: 290px;
-    
+    top: 490px;
+    left: 470px;
 }
 
 #kumara {
     width: 250px;
+    top: 550px;
+    left: 800px;
 }
 
 #jam {
     width: 100px;
+    left: 700px;
+    top: 51px;
 }
 
 #tomato {
     width: 60px;
+    top: 24px;
+    left: 536px;
 }
 
 
