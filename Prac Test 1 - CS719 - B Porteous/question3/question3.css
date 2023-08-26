@@ -35,7 +35,6 @@ body {
 .nav {
   padding: 30px;
   background-color: #D14836;
-  display: flex;
   justify-content: space-evenly;
   grid-area: nav;
   box-shadow:6px 6px 6px rgba(0, 0, 0, 0.1);
@@ -60,7 +59,6 @@ body {
   border-radius: 15px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
   grid-area: sidebar;
-  display: flex;
   flex-direction: column;
   justify-content: space-around;
   font-weight: bold;
@@ -76,13 +74,16 @@ body {
 } 
 
 .card-container {
-  display: flex;
   flex-wrap: wrap;
   grid-area: cards;
 }
 
 .card, .header, .side-bar {
   background-color: #f0e68c;
+}
+
+.nav, .side-bar, .card-container {
+  display: flex;
 }
 
 .card {
@@ -112,7 +113,6 @@ body {
     width: 100%;
   }
   .nav {
-    display: flex;
     flex-direction: column;
     align-items: center;
   }
