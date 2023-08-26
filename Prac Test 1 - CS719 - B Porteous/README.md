@@ -330,7 +330,7 @@ The individual cards within the card container should be laid out with flexbox (
 
 For example, in the screenshot below, you will see 4 cards fit across the page:
 
-![img](./spec/card-container.PNG)
+![img](./spec/card-czontainer.PNG)
 
 More cards would fit across an even wider screen and on a narrower screen, you would only fit 3 or less as demonstrated in this screenshot:
 
