@@ -1,0 +1,25 @@
+#box {
+    width: 100px;
+    height: 100px;
+    background-color: orangered;
+}
+
+.important {
+    font-weight: bold;
+    font-family: fantasy;
+    color: orangered;
+    font-size: 130%;
+}
+
+.animated {
+    animation: bouncy 3s linear 0s infinite alternate;
+}
+
+@keyframes bouncy {
+    from {
+        margin-left: 0px;
+    }
+    to {
+        margin-left: calc(100% - 100px);
+    }
+}
