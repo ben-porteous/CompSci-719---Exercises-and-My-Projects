@@ -6,14 +6,17 @@ body {
     margin: 0px;
 }
 
-h1 {
+.header {
     background-color: #80ced6;
     text-align: center;
     padding: 10px;
     font-size: 2em;
+    margin-top: 0px;
+}
+
+h1 {
     font-family: borel, cursive;
     margin-bottom: 0px;
-    margin-top: 0px;
 }
 
 .nav {
@@ -34,15 +37,16 @@ h1 {
     width: 50px;
     z-index: 1;
     position: relative;
-    top: 5px;
 }
 
 #oliveb {
-    left: -368px;
+    left: 35px;
+    top: -12px
 }
 
 #oliveg {
-    left: -100px;
+    right: 35px;
+    top: -15px;
 }
 
 
