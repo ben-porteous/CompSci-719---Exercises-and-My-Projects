@@ -1,17 +1,11 @@
-
-/* TO DELETE ONCE COMPLETED CSS SHEET*/
-/* * {
-    border: black solid 1px;
-} */
-
 @font-face {
-    font-family: Roboto Slab;
+    font-family: "Roboto Slab";
     src: url(./assets/fonts/RobotoSlab-VariableFont_wght.ttf);
 }
 
 body {
     background-color: gainsboro;
-    font-family: Roboto Slab, serif;
+    font-family: "Roboto Slab", serif;
     margin: 0px;
     background-color: gainsboro;
 }
@@ -34,7 +28,7 @@ p {
     background-color: #FFE69A;
     padding: 40px;
     width: 70%;
-    margin: auto; /*Check in case just left-right*/
+    margin: auto;
 }
 
 p, #container {
@@ -68,7 +62,7 @@ table {
     border: 1px solid black;
     width: 50%;
     margin-left: auto; 
-    margin-right: auto; /*Perhaps to top/bottom too?*/
+    margin-right: auto; 
     border-collapse: collapse;
 }
 
