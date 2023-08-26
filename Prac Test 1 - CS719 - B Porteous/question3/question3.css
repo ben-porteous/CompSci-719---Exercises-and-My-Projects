@@ -50,14 +50,12 @@ body {
 .header {
   color: #D14836;
   font-weight: bolder;
-  background-color: #f0e68c;
   text-align: center;
   padding: 40px;
   grid-area: head;
 }
 
 .side-bar {
-  background-color: #f0e68c; 
   padding: 10px;
   border-radius: 15px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
@@ -84,12 +82,11 @@ body {
 }
 
 .card, .header, .side-bar {
-
+  background-color: #f0e68c;
 }
 
 .card {
     width: 240px;
-    background-color: #f0e68c; 
     margin: 20px;
     box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
