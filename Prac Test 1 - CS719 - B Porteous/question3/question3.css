@@ -117,3 +117,7 @@ body {
     align-items: center;
   }
 }
+
+.pink-cards {
+  background-color: hotpink;
+}
