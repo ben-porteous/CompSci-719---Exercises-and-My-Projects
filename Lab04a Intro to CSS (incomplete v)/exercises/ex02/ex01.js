@@ -8,8 +8,21 @@ window.addEventListener("load", function(){
 
     myThirdNumber = myFirstNumber + 7;
     myFourthNumber = mySecondNumber - myFirstNumber;
-    console.log(myThirdNumber, myFourthNumber)
+    console.log(myThirdNumber, myFourthNumber);
 
-    //area = pi x r^2//
+    //Exercise Three
+    const strHello = "Hello";
+    const strWorld = "World";
+    const name = "Ben";
+    const age = 21;
+    const favoriteFood = "Lasagne";
+    const helloWorld = strHello + " " + strWorld;
+    console.log(helloWorld);
+
+    const sentence = `Welcome and ${strHello} everyone, my name is ${name} and my favorite food is ${favoriteFood}`;
+    console.log(sentence);
+
+    
+
 
 });
