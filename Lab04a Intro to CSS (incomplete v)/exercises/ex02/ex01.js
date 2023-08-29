@@ -22,7 +22,10 @@ window.addEventListener("load", function(){
     const sentence = `Welcome and ${strHello} everyone, my name is ${name} and my favorite food is ${favoriteFood}`;
     console.log(sentence);
 
+    console.log(helloWorld.length);
+    console.log(helloWorld.toUpperCase());
+    console.log(helloWorld.slice(0, 4));
+    console.log(helloWorld.charAt(6));
+    console.log(helloWorld.indexOf("o"));
     
-
-
 });
