@@ -7,7 +7,7 @@ window.addEventListener("load", function () {
 
     bauble.forEach (function(ball) {
         ball.addEventListener("click", function() {
-            console.log(event.target);
+  
             ball.classList.toggle("animated");
 
         })
