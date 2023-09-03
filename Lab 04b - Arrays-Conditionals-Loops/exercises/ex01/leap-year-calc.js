@@ -12,7 +12,21 @@ window.addEventListener("load", function () {
 
         // TODO Your code for Exercise Seven here.
         console.log(year);
+        result = document.querySelector("#result")
 
+        if (year % 4 != 0) {
+          result.innerText = `${year} is not a leap year`;
+        }
+        else if (year % 100 != 0) {
+            result.innerText = `${year} is a leap year! How Exciting!`;        
+        }
+        else if (year % 400 != 0) {
+            result.innerText = `${year} is not a leap year!`;
+        }
+        else {
+            result.innerText = `${year} is a leap year! How Exciting!`;  
+        }
     });
 
 });
+
