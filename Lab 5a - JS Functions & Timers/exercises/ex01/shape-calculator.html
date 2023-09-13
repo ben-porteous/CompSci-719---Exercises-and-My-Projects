@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Shape calculator</title>
+    <script src="shape-calculator.js"></script>
+</head>
+
+<body>
+    <h1>Enter shape details</h1>
+    <p>
+        <label for="txtConeRadius">Cone radius (cm):</label>
+        <input type="number" id="txtConeRadius">
+    </p>
+    <p>
+        <label for="txtConeHeight">Cone height (cm):</label>
+        <input type="number" id="txtConeHeight">
+    </p>
+    <p>
+        <label for="txtCylinderRadius">Cylinder radius (cm):</label>
+        <input type="number" id="txtCylinderRadius">
+    </p>
+    <p>
+        <label for="txtCylinderHeight">Cylinder height (cm):</label>
+        <input type="number" id="txtCylinderHeight">
+    </p>
+    <p>
+        <button id="btnCalculate">Calculate!</button>
+    </p>
+    <h1>Results</h1>
+    <p>Cone volume: <span id="coneVolume">0</span> cm<sup>3</sup></p>
+    <p>Cylinder volume: <span id="cylVolume">0</span> cm<sup>3</sup></p>
+    <p id="resultDetail"></p>
+</body>
+
+</html>

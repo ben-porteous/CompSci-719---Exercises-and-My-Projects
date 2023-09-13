@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Data Viewer</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="data-viewer.js"></script>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="control-panel">
+            <h2>Examples Using .forEach, .map, .filter and .reduce:</h2>
+            <p>All of these first examples should be able to be run already; please run these examples and examine the
+                code so that you understand the sort of functionality you'll be completing in the tasks.</p>
+            <p>Please make sure to look at the use of the .map, .filter and .reduce array iterator methods specifically
+                so that you understand how they can be used to filter, change and summarise data that is stored within
+                arrays of JavaScript objects.</p>
+
+            <button id="display-all-books">Display all books</button><br><br>
+
+            <button id="display-price-under">Display books under the price of</button>
+            <br><span>$</span><input type="number" id="price-under-input"><br><br>
+
+            <button id="calculate-average-price">Calculate average price</button>
+            <p>The average price of all books is: $<span id="average-display"></span></p>
+
+            <button id="convert-to-pounds">Convert and display prices in pounds (dollars * 0.77)</button>
+
+            <h2>Tasks for you to complete:</h2>
+            <p>These three options below that are related to book ratings require you to complete the contents of the
+                related JavaScript functions in order to work properly.</p>
+            <p>Make sure to read the instructions in the handout carefully and the relevant comments in the JavaScript
+                code. You should also spend some time examining the examples first as they are structurally very similar
+                to the code you will implement.</p>
+
+            <button id="display-ratings-over">Display books over the rating of</button>
+            <br><input type="number" id="rating-over-input"><br><br>
+
+            <button id="calculate-average-rating">Calculate average rating</button>
+            <p>The average rating of all books is: <br><span id="average-rating-display"></span></p>
+            <button id="convert-rating">Convert 'out of 5' rating to percentage and display</button>
+        </div>
+
+
+        <div class="data-display" id="book-display">
+            <p>Book data will be displayed here and overwrite this content when it is displayed in this div...</p>
+        </div>
+    </div>
+</body>
+
+</html>
