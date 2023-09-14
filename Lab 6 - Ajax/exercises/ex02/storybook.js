@@ -46,7 +46,7 @@ window.addEventListener("load", function () {
         // TODO: Update the span element that displays the total page count to display the total page count
         pageTotal.innerText = totalPageCount;
         // TODO: Update the span element that displays the current page number to display the current page number
-        pageCurrent.innerText = 
+        
         // TODO: Update the div element for the right hand page div to display the content for the current page
         // Have a look at the structure of the data in the endpoint response to see the content property
 
