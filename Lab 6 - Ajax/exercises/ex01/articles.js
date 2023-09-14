@@ -30,4 +30,32 @@ window.addEventListener("load", function () {
 
     displayArticles();
 
+
+
+    /// BREAK BETWEEEN PRE-ADDED AND MY CODE ///
+
+
+    //Code to add ID & Author to the Webpage
+    const idAuthorDiv = document.createElement("div");
+    const titleForIdAuthor = document.createElement("h2");
+    titleForIdAuthor.innerText = "Items and their Authors:";
+    const container = document.querySelector(".container");
+    container.appendChild(titleForIdAuthor);
+    container.appendChild(idAuthorDiv)
+
+    async function grabData() {
+        let fullWebDataStr = await fetch(`https://article.trex-sandwich.com/articles`);
+        let fullWebDataJSON = await fullWebDataStr.json()
+
+        fullWebDataJSON.forEach(item => {
+        i = 0;
+        idAuthorDiv.innerHTML += `<h4>Item ${item.id}: <h4> <p>Author: ${item.author_id}</p>`;
+        i++;
+    })
+    }
+
+    
+    grabData();
+
+
 });
