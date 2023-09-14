@@ -45,13 +45,11 @@ window.addEventListener("load", function () {
 
     async function grabData() {
         let fullWebDataStr = await fetch(`https://article.trex-sandwich.com/articles`);
-        let fullWebDataJSON = await fullWebDataStr.json()
+        let fullWebDataJSON = await fullWebDataStr.json();
 
         fullWebDataJSON.forEach(item => {
-        i = 0;
-        idAuthorDiv.innerHTML += `<h4>Item ${item.id}: <h4> <p>Author: ${item.author_id}</p>`;
-        i++;
-    })
+            idAuthorDiv.innerHTML += `<h4>Item Number: ${item.id} </h4> <p>Author: ${item.author_id}</p>`;
+        });
     }
 
     
@@ -59,3 +57,4 @@ window.addEventListener("load", function () {
 
 
 });
+
