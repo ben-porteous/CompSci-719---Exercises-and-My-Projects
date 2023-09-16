@@ -9,6 +9,7 @@ window.addEventListener("load", function () {
     const pokemonNumber = document.querySelector("#pokemon-number")
     const pokemonDescription = document.querySelector("#pokemon-description")
 
+
     //function to fetch of list of all pokemon and list on website
     async function getAllPokemon() {
         const allPokemonString = await fetch(`https://cs719-a01-pt-server.trex-sandwich.com/api/pokemon`);
@@ -19,14 +20,7 @@ window.addEventListener("load", function () {
         })
     }
 
-    //function to get random pokemon's data
-    async function getRandomPokemon() {
-        const randomPokemonString = await fetch(`https://cs719-a01-pt-server.trex-sandwich.com/api/pokemon/random`);
-        const randomPokemonJson = await randomPokemonString.json();
-        return randomPokemonJson;
-    }
-
-    //function to load show indiv pokemon's data into the site:
+    //function to load & show indiv pokemon's data into the site:
     async function loadPokemonData (pokemon) {
         const specificPokemonString = await fetch(`https://cs719-a01-pt-server.trex-sandwich.com/api/pokemon/${pokemon}`);
         const specificPokemonJson = await specificPokemonString.json();
@@ -38,12 +32,21 @@ window.addEventListener("load", function () {
         pokemonImage.setAttribute("src", `${specificPokemonJson.imageUrl}`);
     }
 
+    //function to get random pokemon's data - is this needed, or just load once page loaded?????
+    async function getRandomPokemon() {
+        const randomPokemonString = await fetch(`https://cs719-a01-pt-server.trex-sandwich.com/api/pokemon/random`);
+        const randomPokemonJson = await randomPokemonString.json();
+        const randomDex = await randomPokemonJson.dexNumber;
+        loadPokemonData(randomDex);
+    }
+
+
+
 
 
     getAllPokemon();
-
-    // getRandomPokemon();
-    loadPokemonData(60);
+    getRandomPokemon();
+    // loadPokemonData(123);
 
 });
 
