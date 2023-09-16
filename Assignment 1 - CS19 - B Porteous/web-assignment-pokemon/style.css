@@ -1,36 +1,31 @@
-* {
-    /* You can remove this line whenever you want, it is here for testing purposes */
-    border: 1px solid black;
-}
-
 body {
     margin: 0px;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 500px) {
+    #container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+        grid-template-areas:
+            "head head head head head"
+            ". lsidebar content rsidebar ."
+            "foot foot foot foot foot";
+    }
 }
 
-#container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
-    grid-template-areas: 
-    "head head head head head"
-    ". nav content rsidebar ."
-    "foot foot foot foot foot";
+.header,
+.footer {
+    background-color: slategray;
+    text-align: center;
+
 }
 
 .header {
     grid-area: head;
 }
 
-.header, .footer {
-    background-color: slategray;
-    text-align: center;
-
-}
-
-.nav {
-    grid-area: nav;
+.lsidebar {
+    grid-area: lsidebar;
 }
 
 .content {
@@ -40,21 +35,10 @@ body {
 
 .footer {
     grid-area: foot;
-    
+
 }
 
 .rsidebar {
     grid-area: rsidebar;
 }
 
-
-    #container {
-        /* grid-template-columns: 1fr;
-        grid-template-areas: 
-        "head"
-        "content"
-        "nav"
-        "foot"; */
-    }
-
-}
