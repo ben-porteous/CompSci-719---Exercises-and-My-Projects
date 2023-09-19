@@ -1,0 +1,71 @@
+/* 
+*  Note: a 1 pixel solid black border has been added
+*  to all elements to make it easier to view how the 
+*  CSS Box Model affects all elements on the page.
+*
+*  You should be able to position most elements in the
+*  page mainly through padding and margin properties.
+*
+*  Make sure to review padding, margin and the box model.
+*
+*  For centering divs of content, you should investigate
+*  how to use the 'margin: auto;' property.
+*/
+
+
+body {
+    margin: 0px;
+}
+
+h1 {
+    background-color: #62ded5;
+    text-align: center;
+    margin: 0px;
+    padding: 60px;
+}
+
+h2 {
+    background-color: #62ded5;
+    text-align: center;
+}
+
+h2 {
+    background-color: #94ede6;
+}
+
+#nav {
+    background-color: #338487;
+    text-align: right;
+    padding: 40px;
+}
+
+p {
+    background-color: #94ede6;
+}
+
+#container {
+    background-color: #62ded5;
+    margin: 0px 100px;
+    padding: 20px 0px;
+}
+
+#nav a {
+
+}
+
+img {
+    display: block;
+    margin: auto;
+    width: 50%;
+
+}
+
+.links {
+    padding: 20px;
+    margin: 20px;
+}
+
+.writing {
+    padding: 40px; 
+    margin: 20px 70px;
+}

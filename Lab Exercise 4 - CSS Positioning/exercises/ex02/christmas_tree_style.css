@@ -1,0 +1,61 @@
+/* Write the CSS for you answer here */
+* {
+    border: 1px solid black;
+}
+
+#container {
+    position: relative;
+    width: 700px;
+    height: 541px;
+    background-color: purple;
+}
+
+.bground {
+    width: 95%;
+    position: absolute;
+    margin: 2.5%;
+}
+
+#tree {
+    z-index: 2;
+    bottom: 0%;
+}
+
+ #landscape {
+    z-index: 1;
+ }
+
+ /* Baubles: */
+
+ .bauble {
+    z-index: 4;
+    position: absolute;
+ }
+
+ #purple {
+    z-index: 3;
+ }
+
+#red{
+    left: 15%;
+ }
+
+ #blue {
+    left: 20%;
+ }
+
+ #dblue {
+    left: 30%;
+ }
+
+ #green {
+    left: 40%;
+ }
+
+ #orange {
+    left: 50%;
+ }
+
+ #pink {
+    left: 10%;
+ }
