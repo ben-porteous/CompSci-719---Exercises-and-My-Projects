@@ -12,26 +12,49 @@ window.addEventListener("load", async function () {
     let i = 1
 
 
+    // //function to fetch of list of all pokemon and list on website
+    // async function getAllPokemon() {
+    //     const allPokemonString = await fetch(`https://cs719-a01-pt-server.trex-sandwich.com/api/pokemon`);
+    //     const allPokemonJson = await allPokemonString.json();
+    //     allPokemonJson.forEach(function (pokemon) {
+    //         const pokemonName = pokemon.name;
+    //         const newPokemonPara = document.createElement("p")
+    //         newPokemonPara.innerText = `${pokemonName}`
+    //         newPokemonPara.setAttribute("id", `id-${i}`)
+    //         newPokemonPara.classList.add("pokemonList");
+    //         allPokemonTitle.appendChild(newPokemonPara);
+    //         newPokemonPara.addEventListener("click", async function(){
+    //             await loadPokemonData(`${pokemon.dexNumber}`)
+    //         })
+    //         i++ ;
+    //     }) 
+    // }
+
+
     //function to fetch of list of all pokemon and list on website
     async function getAllPokemon() {
         const allPokemonString = await fetch(`https://cs719-a01-pt-server.trex-sandwich.com/api/pokemon`);
         const allPokemonJson = await allPokemonString.json();
-        allPokemonJson.forEach(function (pokemon) {
-            const pokemonName = pokemon.name;
-            const newPokemonPara = document.createElement("p")
-            newPokemonPara.innerText = `${pokemonName}`
-            newPokemonPara.setAttribute("id", `id-${i}`)
-            newPokemonPara.classList.add("pokemonList");
-            allPokemonTitle.appendChild(newPokemonPara);
-            newPokemonPara.addEventListener("click", async function(){
-                await loadPokemonData(`${pokemon.dexNumber}`)
-            })
-            i++ ;
-        }) 
+        allPokemonJson.forEach(loadAllPokemon)
+    }
+
+    function loadAllPokemon(pokemon) {
+        const pokemonName = pokemon.name;
+        const newPokemonPara = document.createElement("p")
+        newPokemonPara.innerText = `${pokemonName}`
+        newPokemonPara.setAttribute("id", `id-${i}`)
+        newPokemonPara.classList.add("pokemonList");
+        allPokemonTitle.appendChild(newPokemonPara);
+        newPokemonPara.addEventListener("click", async function(){
+            await loadPokemonData(`${pokemon.dexNumber}`)
+        })
+        i++ ;
     }
 
 
-    //function to load & show indiv pokemon's data into the site:
+
+
+    //function to load & show an individ's pokemon's data into the site:
     async function loadPokemonData (pokemon) {
         const specificPokemonString = await fetch(`https://cs719-a01-pt-server.trex-sandwich.com/api/pokemon/${pokemon}`);
         const specificPokemonJson = await specificPokemonString.json();
