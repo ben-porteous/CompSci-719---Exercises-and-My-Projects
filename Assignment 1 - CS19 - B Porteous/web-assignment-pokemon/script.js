@@ -68,8 +68,7 @@ window.addEventListener("load", async function () {
         const typeDataString = await fetch(`https://cs719-a01-pt-server.trex-sandwich.com/api/types/${type}`)
         const typeDataJson = await typeDataString.json()
         createTable(`${type} type attacks`,"Defending Type:", "Damage Dealt:", offence)
-        const table = document.querySelector("#table-row")
-        console.log(typeDataJson)
+        let table = document.querySelector(`#table-row`)
         console.log(typeDataJson.offenseDamageMultipliers)
         typeDataJson.offenseDamageMultipliers.forEach(function (item){
             table.innerHTML += `
@@ -84,6 +83,7 @@ window.addEventListener("load", async function () {
 
     function createTable(header, subt1, subt2, parent) {
         const table = document.createElement("table")
+        table.classList.add("tables")
         const tableHeaderRow = document.createElement("tr")
         const tableHeader = document.createElement("th")
         tableHeader.setAttribute("colspan", 2)
@@ -91,7 +91,7 @@ window.addEventListener("load", async function () {
         const tableCell1 = document.createElement("td")
         const tableCell2 = document.createElement("td")
         const tableRow2 = document.createElement("tr")
-        table.setAttribute("id", "table-row")
+        table.setAttribute("id", `table-row`)
 
 
         parent.appendChild(table)
