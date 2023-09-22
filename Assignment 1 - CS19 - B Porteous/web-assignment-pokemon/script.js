@@ -76,10 +76,11 @@ window.addEventListener("load", async function () {
         const typeDataJson = await typeDataString.json()
         let i = 0
         const table = createTable(`${type} type attacks`, "Defending Type:", "Damage Dealt:", offence);
+        // table.innerHTML += `<tr><th>>${type} type attacks</th></tr>`
         let t = 0
-        typeDataJson.offenseDamageMultipliers.forEach(function() {
+        typeDataJson.offenseDamageMultipliers.forEach(function () {
             table.innerHTML +=
-            `<tr>
+                `<tr>
                 <td>${typeDataJson.offenseDamageMultipliers[t].type}</td>
                 <td>${typeDataJson.offenseDamageMultipliers[t].multiplier}</td>
             </tr>`
@@ -88,20 +89,20 @@ window.addEventListener("load", async function () {
     }
 
     async function loadPokemonDefense(pokemon) {
-    const defenseString = await fetch(`https://cs719-a01-pt-server.trex-sandwich.com/api/pokemon/${pokemon}/defense-profile`)
-    const defenseJson = await defenseString.json();
-    const table = createTable("placeholder", "Attacking Type", "Damage Received", defense)
-    let t = 0
-    defenseJson.forEach(function() {
-        table.innerHTML +=
-        `<tr>
+        const defenseString = await fetch(`https://cs719-a01-pt-server.trex-sandwich.com/api/pokemon/${pokemon}/defense-profile`)
+        const defenseJson = await defenseString.json();
+        const table = createTable(undefined, "Attacking Type", "Damage Received", defense)
+        let t = 0
+        defenseJson.forEach(function () {
+            table.innerHTML +=
+                `<tr>
             <td>${defenseJson[t].type}</td>
             <td>${defenseJson[t].multiplier}</td>
         </tr>`
-        t++
-    })
-}
-    
+            t++
+        })
+    }
+
 
 
     //Function to create a table
@@ -125,12 +126,17 @@ window.addEventListener("load", async function () {
         tableRow1.appendChild(tableCell2)
         table.appendChild(tableRow2)
 
-        tableHeader.innerHTML = header;
         tableCell1.innerText = subt1;
         tableCell2.innerText = subt2;
 
+        if (header === undefined) {
+        } else {
+            tableHeader.innerHTML = header;
+        }
+
         return table;
     }
+
 
 
     ////////FROM HERE ALL IS WORK IN PROGRESS
@@ -138,7 +144,7 @@ window.addEventListener("load", async function () {
 
 
 
-    
+
     //add ; to the end of each line
 
 })
