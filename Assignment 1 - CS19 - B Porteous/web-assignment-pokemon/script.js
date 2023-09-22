@@ -12,7 +12,7 @@ window.addEventListener("load", async function () {
     // const allPokemonTitle = document.querySelector("#all-pokemon-title")
     const offence = document.querySelector("#offence")
     const defence = document.querySelector("#defence")
-
+    let a = 0
 
 
     //function to fetch of list of all pokemon and list on website
@@ -39,6 +39,7 @@ window.addEventListener("load", async function () {
         loadPokemonData(randomDex);
     }
 
+
     //function to load & show an individ's pokemon's data into the site:
     async function loadPokemonData(pokemon) {
         const specificPokemonString = await fetch(`https://cs719-a01-pt-server.trex-sandwich.com/api/pokemon/${pokemon}`);
@@ -64,22 +65,34 @@ window.addEventListener("load", async function () {
 
 
 
+
+
+
     async function pokemonTypeFunction(type) {
         const typeDataString = await fetch(`https://cs719-a01-pt-server.trex-sandwich.com/api/types/${type}`)
         const typeDataJson = await typeDataString.json()
-        createTable(`${type} type attacks`,"Defending Type:", "Damage Dealt:", offence)
-        let table = document.querySelector(`#table-row`)
+        console.log(typeDataJson)
+        console.log(type)
+        let i = 0
         console.log(typeDataJson.offenseDamageMultipliers)
-        typeDataJson.offenseDamageMultipliers.forEach(function (item){
-            table.innerHTML += `
-           <tr>
-            <td>${item.type}</td>
-            <td>${item.multiplier}</td>
+        const table = createTable(`${type} type attacks`, "Defending Type:", "Damage Dealt:", offence);
+        let t = 0
+        typeDataJson.offenseDamageMultipliers.forEach(function() {
+
+            table.innerHTML +=
+            `<tr>
+                <td>${typeDataJson.offenseDamageMultipliers[t].type}</td>
+                <td>${typeDataJson.offenseDamageMultipliers[t].multiplier}</td>
             </tr>`
-            
+            t++
         })
-        
     }
+
+
+
+
+
+    
 
     function createTable(header, subt1, subt2, parent) {
         const table = document.createElement("table")
@@ -91,7 +104,7 @@ window.addEventListener("load", async function () {
         const tableCell1 = document.createElement("td")
         const tableCell2 = document.createElement("td")
         const tableRow2 = document.createElement("tr")
-        table.setAttribute("id", `table-row`)
+        table.setAttribute("id", `table-row-${a}`)
 
 
         parent.appendChild(table)
@@ -105,12 +118,15 @@ window.addEventListener("load", async function () {
         tableHeader.innerHTML = header;
         tableCell1.innerText = subt1;
         tableCell2.innerText = subt2;
-        
+
+
+
+        return table;
 
     }
 
 
-////////FROM HERE ALL IS WORK IN PROGRESS
+    ////////FROM HERE ALL IS WORK IN PROGRESS
 
 
 
@@ -166,57 +182,9 @@ window.addEventListener("load", async function () {
 
     //add ; to the end of each line
 
-    // const li = fragment
-    //   .appendChild(document.createElement("section"))
-    //   .appendChild(document.createElement("ul"))
-    //   .appendChild(document.createElement("li"));
-    // li.textContent = "hello world";
-
-
-
-
-
-
-    // function tableCreator(header, subheading1, subheading2, parent) {
-    //     const table = document.createElement("table")
-    //     // const tableRow1 = document.createElement("tr")
-    //     // const tableCell1 = document.createElement("td")
-    //     parent.appendChild(table)
-    // }
-
-    
-
-
-
-
-
-
-
-
-
-    //function to make a table
-    // function tableCreator(subheading1, subheading2, parent) {
-    //     const table = document.createElement("table")
-    //     const tableRow1 = document.createElement("tr")
-    //     const tableCell1 = document.createElement("td")
-    //     const tableCell2 = document.createElement("td")
-    //     const tableRow2 =  document.createElement("tr")
-
-    //     table.appendChild(tableRow1)
-    //     tableRow1.appendChild(tableCell1)
-    //     tableRow1.appendChild(tableCell2)
-    //     tableCell1.innerHTML = subheading1
-    //     tableCell2.innerHTML = subheading2
-    //     table.appendChild(tableRow2)
-    // }
-
-    //tableCreator()
-
-
-    //
-
-
-
-
-
 })
+
+
+
+
+
