@@ -11,7 +11,7 @@ window.addEventListener("load", async function () {
     const pokemonDescription = document.querySelector("#pokemon-description")
     // const allPokemonTitle = document.querySelector("#all-pokemon-title")
     const offence = document.querySelector("#offence")
-    const defence = document.querySelector("#defence")
+    const defense = document.querySelector("#defense")
     let a = 0
 
 
@@ -53,7 +53,11 @@ window.addEventListener("load", async function () {
             return acc + ", " + current;
         });
         offence.innerHTML = "<p>On Offense:</p>"
-        specificPokemonJson.types.forEach(pokemonTypeFunction)
+        defense.innerHTML = "<p>On Defense</p>"
+        specificPokemonJson.types.forEach(loadPokemonOffense)
+        console.log(specificPokemonJson)
+        loadPokemonDefense(pokemon)
+
     };
 
 
@@ -66,19 +70,14 @@ window.addEventListener("load", async function () {
 
 
 
-
-
-    async function pokemonTypeFunction(type) {
+    //Function to load defence info and include in a table
+    async function loadPokemonOffense(type) {
         const typeDataString = await fetch(`https://cs719-a01-pt-server.trex-sandwich.com/api/types/${type}`)
         const typeDataJson = await typeDataString.json()
-        console.log(typeDataJson)
-        console.log(type)
         let i = 0
-        console.log(typeDataJson.offenseDamageMultipliers)
         const table = createTable(`${type} type attacks`, "Defending Type:", "Damage Dealt:", offence);
         let t = 0
         typeDataJson.offenseDamageMultipliers.forEach(function() {
-
             table.innerHTML +=
             `<tr>
                 <td>${typeDataJson.offenseDamageMultipliers[t].type}</td>
@@ -88,12 +87,24 @@ window.addEventListener("load", async function () {
         })
     }
 
-
-
-
-
+    async function loadPokemonDefense(pokemon) {
+    const defenseString = await fetch(`https://cs719-a01-pt-server.trex-sandwich.com/api/pokemon/${pokemon}/defense-profile`)
+    const defenseJson = await defenseString.json();
+    const table = createTable("placeholder", "Attacking Type", "Damage Received", defense)
+    let t = 0
+    defenseJson.forEach(function() {
+        table.innerHTML +=
+        `<tr>
+            <td>${defenseJson[t].type}</td>
+            <td>${defenseJson[t].multiplier}</td>
+        </tr>`
+        t++
+    })
+}
     
 
+
+    //Function to create a table
     function createTable(header, subt1, subt2, parent) {
         const table = document.createElement("table")
         table.classList.add("tables")
@@ -105,7 +116,6 @@ window.addEventListener("load", async function () {
         const tableCell2 = document.createElement("td")
         const tableRow2 = document.createElement("tr")
         table.setAttribute("id", `table-row-${a}`)
-
 
         parent.appendChild(table)
         table.appendChild(tableHeaderRow)
@@ -119,10 +129,7 @@ window.addEventListener("load", async function () {
         tableCell1.innerText = subt1;
         tableCell2.innerText = subt2;
 
-
-
         return table;
-
     }
 
 
@@ -131,55 +138,7 @@ window.addEventListener("load", async function () {
 
 
 
-    //Get Type Data for a pokemon and load it
-    //    https://cs719-a01-pt-server.trex-sandwich.com/api/pokemon/${type}
-    //    https://cs719-a01-pt-server.trex-sandwich.com/api/types/${type}
-
-    //https://cs719-a01-pt-server.trex-sandwich.com/api/types/grass
-
-    // let t = 0
-    // async function pokemonTypeFunction(type) {
-    //     const typeDataString = await fetch(`https://cs719-a01-pt-server.trex-sandwich.com/api/types/${type}`)
-    //     const typeDataJson = await typeDataString.json()
-    //     const table = document.createElement("table")
-    //     const tableRow1 = document.createElement("tr")
-    //     const tableCell1 = document.createElement("td")
-    //     const tableCell2 = document.createElement("td")
-    //     const tableRow2 = document.createElement("tr")
-    //     const tableHeader = document.createElement("th")
-    //     offence.appendChild(table)
-    //     table.appendChild(tableHeader)
-    //     table.appendChild(tableRow1)
-    //     tableRow1.appendChild(tableCell1)
-    //     tableRow1.appendChild(tableCell2)
-    //     tableHeader.innerHTML = `${type} type attacks`
-    //     tableCell1.innerHTML = "Defending Type:"
-    //     tableCell2.innerHTML = "Damage Dealt"
-    //     table.appendChild(tableRow2)
-    //     console.log(typeDataJson)
-    //     console.log(typeDataJson.offenseDamageMultipliers)
-
-    //     tableRow2.innerHTML += `<td>${typeDataJson.offenseDamageMultipliers[0].type}</td>` //errors!
-    //     tableRow2.innerHTML += `<td>${typeDataJson.offenseDamageMultipliers[0].multiplier}</td>` // errors!
-    // }
-    //The headings need to be: "Defending type" "Damage Dealt"
-
-    //         pokeTypeDataString = await fetch(`https:cs719-a01-pt-server.trex-sandwich.com/api/types/${type}`) // website for individual types. in site is .offenceM[type].
-    //         pokeTypeDataJson = await pokeTypeDataString.json()
-    //         console.log(pokeTypeDataJson)
-    //         tableData.innerHTML = `${type} type attacks:`
-    //         //Works up to here//
-
-
-
-    // tableData.innerHTML = `
-    // <td> ${pokeTypeDataJson}.offenceDamageMultipliers[${t}].type </td>
-    // <td> ${pokeTypeDataJson}.offenceDamageMultipliers[${t}].multiplier </td>
-    // `
-
-    // };
-    // });
-
+    
     //add ; to the end of each line
 
 })
