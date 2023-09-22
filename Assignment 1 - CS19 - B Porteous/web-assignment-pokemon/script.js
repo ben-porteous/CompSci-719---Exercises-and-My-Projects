@@ -63,9 +63,41 @@ window.addEventListener("load", async function () {
 
 
 
+    async function pokemonTypeFunction(type) {
+        const typeDataString = await fetch(`https://cs719-a01-pt-server.trex-sandwich.com/api/types/${type}`)
+        const typeDataJson = await typeDataString.json()
+        createTable(`${type} type attacks`,"Defending Type:", "Damage Dealt:", offence)
+        
+    }
+
+    function createTable(header, subt1, subt2, parent) {
+        const table = document.createElement("table")
+        const tableHeaderRow = document.createElement("tr")
+        const tableHeader = document.createElement("th")
+        tableHeader.setAttribute("colspan", 2)
+        const tableRow1 = document.createElement("tr")
+        const tableCell1 = document.createElement("td")
+        const tableCell2 = document.createElement("td")
+        const tableRow2 = document.createElement("tr")
 
 
+        parent.appendChild(table)
+        table.appendChild(tableHeaderRow)
+        tableHeaderRow.appendChild(tableHeader)
+        table.appendChild(tableRow1)
+        tableRow1.appendChild(tableCell1)
+        tableRow1.appendChild(tableCell2)
+        table.appendChild(tableRow2)
 
+        tableHeader.innerHTML = header;
+        tableCell1.innerText = subt1;
+        tableCell2.innerText = subt2;
+        
+
+    }
+
+
+////////FROM HERE ALL IS WORK IN PROGRESS
 
 
 
@@ -76,64 +108,81 @@ window.addEventListener("load", async function () {
 
     //https://cs719-a01-pt-server.trex-sandwich.com/api/types/grass
 
-// let t = 0
-    async function pokemonTypeFunction(type) {
-        const typeDataString = await fetch(`https://cs719-a01-pt-server.trex-sandwich.com/api/types/${type}`)
-        const typeDataJson = await typeDataString.json()
-        const table = document.createElement("table")
-        const tableRow1 = document.createElement("tr")
-        const tableCell1 = document.createElement("td")
-        const tableCell2 = document.createElement("td")
-        const tableRow2 =  document.createElement("tr")
-        const tableHeader = document.createElement("th")
-        offence.appendChild(table)
-        table.appendChild(tableHeader)
-        table.appendChild(tableRow1)
-        tableRow1.appendChild(tableCell1)
-        tableRow1.appendChild(tableCell2)
-        tableHeader.innerHTML = `${type} type attacks`
-        tableCell1.innerHTML = "Defending Type:"
-        tableCell2.innerHTML = "Damage Dealt"
-        table.appendChild(tableRow2)
-        console.log(typeDataJson)
-        console.log(typeDataJson.offenseDamageMultipliers)
+    // let t = 0
+    // async function pokemonTypeFunction(type) {
+    //     const typeDataString = await fetch(`https://cs719-a01-pt-server.trex-sandwich.com/api/types/${type}`)
+    //     const typeDataJson = await typeDataString.json()
+    //     const table = document.createElement("table")
+    //     const tableRow1 = document.createElement("tr")
+    //     const tableCell1 = document.createElement("td")
+    //     const tableCell2 = document.createElement("td")
+    //     const tableRow2 = document.createElement("tr")
+    //     const tableHeader = document.createElement("th")
+    //     offence.appendChild(table)
+    //     table.appendChild(tableHeader)
+    //     table.appendChild(tableRow1)
+    //     tableRow1.appendChild(tableCell1)
+    //     tableRow1.appendChild(tableCell2)
+    //     tableHeader.innerHTML = `${type} type attacks`
+    //     tableCell1.innerHTML = "Defending Type:"
+    //     tableCell2.innerHTML = "Damage Dealt"
+    //     table.appendChild(tableRow2)
+    //     console.log(typeDataJson)
+    //     console.log(typeDataJson.offenseDamageMultipliers)
 
-        tableRow2.innerHTML += `<td>${typeDataJson.offenseDamageMultipliers[0].type}</td>` //errors!
-        tableRow2.innerHTML += `<td>${typeDataJson.offenseDamageMultipliers[0].multiplier}</td>` // errors!
-    }
-        //The headings need to be: "Defending type" "Damage Dealt"
+    //     tableRow2.innerHTML += `<td>${typeDataJson.offenseDamageMultipliers[0].type}</td>` //errors!
+    //     tableRow2.innerHTML += `<td>${typeDataJson.offenseDamageMultipliers[0].multiplier}</td>` // errors!
+    // }
+    //The headings need to be: "Defending type" "Damage Dealt"
 
-//         pokeTypeDataString = await fetch(`https:cs719-a01-pt-server.trex-sandwich.com/api/types/${type}`) // website for individual types. in site is .offenceM[type].
-//         pokeTypeDataJson = await pokeTypeDataString.json()
-//         console.log(pokeTypeDataJson)
-//         tableData.innerHTML = `${type} type attacks:`
-//         //Works up to here//
+    //         pokeTypeDataString = await fetch(`https:cs719-a01-pt-server.trex-sandwich.com/api/types/${type}`) // website for individual types. in site is .offenceM[type].
+    //         pokeTypeDataJson = await pokeTypeDataString.json()
+    //         console.log(pokeTypeDataJson)
+    //         tableData.innerHTML = `${type} type attacks:`
+    //         //Works up to here//
 
 
 
-        // tableData.innerHTML = `
-        // <td> ${pokeTypeDataJson}.offenceDamageMultipliers[${t}].type </td>
-        // <td> ${pokeTypeDataJson}.offenceDamageMultipliers[${t}].multiplier </td>
-        // `
+    // tableData.innerHTML = `
+    // <td> ${pokeTypeDataJson}.offenceDamageMultipliers[${t}].type </td>
+    // <td> ${pokeTypeDataJson}.offenceDamageMultipliers[${t}].multiplier </td>
+    // `
 
     // };
-// });
+    // });
 
-//add ; to the end of each line
+    //add ; to the end of each line
 
-// const li = fragment
-//   .appendChild(document.createElement("section"))
-//   .appendChild(document.createElement("ul"))
-//   .appendChild(document.createElement("li"));
-// li.textContent = "hello world";
+    // const li = fragment
+    //   .appendChild(document.createElement("section"))
+    //   .appendChild(document.createElement("ul"))
+    //   .appendChild(document.createElement("li"));
+    // li.textContent = "hello world";
 
 
 
-})
+
+
+
+    // function tableCreator(header, subheading1, subheading2, parent) {
+    //     const table = document.createElement("table")
+    //     // const tableRow1 = document.createElement("tr")
+    //     // const tableCell1 = document.createElement("td")
+    //     parent.appendChild(table)
+    // }
+
+    
+
+
+
+
+
+
+
 
 
     //function to make a table
-    // function tableCreator(subheading1, subheading2) {
+    // function tableCreator(subheading1, subheading2, parent) {
     //     const table = document.createElement("table")
     //     const tableRow1 = document.createElement("tr")
     //     const tableCell1 = document.createElement("td")
@@ -147,3 +196,14 @@ window.addEventListener("load", async function () {
     //     tableCell2.innerHTML = subheading2
     //     table.appendChild(tableRow2)
     // }
+
+    //tableCreator()
+
+
+    //
+
+
+
+
+
+})
