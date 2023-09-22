@@ -129,8 +129,7 @@ window.addEventListener("load", async function () {
         tableCell1.innerText = subt1;
         tableCell2.innerText = subt2;
 
-        if (header === undefined) {
-        } else {
+        if (header) {
             tableHeader.innerHTML = header;
         }
 
@@ -152,4 +151,11 @@ window.addEventListener("load", async function () {
 
 
 
+// Rather than display multiplier values directly, text should be displayed instead, as follows [2 marks]:
 
+// Multiplier 0: "No damage"
+// Multiplier 0.25: "Quarter damage"
+// Multiplier 0.5: "Half damage"
+// Multiplier 1: "Normal damage"
+// Multiplier 2: "Double damage"
+// Multiplier 4: "Quadruple damage"
