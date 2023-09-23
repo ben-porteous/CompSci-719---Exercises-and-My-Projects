@@ -55,7 +55,6 @@ window.addEventListener("load", async function () {
         offence.innerHTML = "<p>On Offense:</p>"
         defense.innerHTML = "<p>On Defense</p>"
         specificPokemonJson.types.forEach(loadPokemonOffense)
-        console.log(specificPokemonJson)
         loadPokemonDefense(pokemon)
 
     };
@@ -74,15 +73,32 @@ window.addEventListener("load", async function () {
     async function loadPokemonOffense(type) {
         const typeDataString = await fetch(`https://cs719-a01-pt-server.trex-sandwich.com/api/types/${type}`)
         const typeDataJson = await typeDataString.json()
-        let i = 0
+
         const table = createTable(`${type} type attacks`, "Defending Type:", "Damage Dealt:", offence);
-        // table.innerHTML += `<tr><th>>${type} type attacks</th></tr>`
+
         let t = 0
+        console.log(typeDataJson.offenseDamageMultipliers)
+
         typeDataJson.offenseDamageMultipliers.forEach(function () {
+            let damage = ""
+            if (typeDataJson.offenseDamageMultipliers[t].multiplier == 0) {
+                damage = "No Damage"
+            } else if (typeDataJson.offenseDamageMultipliers[t].multiplier == 0.25) {
+                damage = "Quarter Damage"
+            } else if (typeDataJson.offenseDamageMultipliers[t].multiplier == 0.5) {
+                damage = "Half Damage";
+            } else if (typeDataJson.offenseDamageMultipliers[t].multiplier == 1) {
+                damage = "Normal Damage"
+            } else if (typeDataJson.offenseDamageMultipliers[t].multiplier == 2) {
+                damage = "Double Damage"
+            } else if (typeDataJson.offenseDamageMultipliers[t].multiplier == 4) {
+                damage = "Quadruple Damage"
+            }
+
             table.innerHTML +=
                 `<tr>
                 <td>${typeDataJson.offenseDamageMultipliers[t].type}</td>
-                <td>${typeDataJson.offenseDamageMultipliers[t].multiplier}</td>
+                <td>${damage}</td>
             </tr>`
             t++
         })
@@ -94,10 +110,26 @@ window.addEventListener("load", async function () {
         const table = createTable(undefined, "Attacking Type", "Damage Received", defense)
         let t = 0
         defenseJson.forEach(function () {
+
+            let damage = ""
+            if (defenseJson[t].multiplier == 0) {
+                damage = "No Damage"
+            } else if (defenseJson[t].multiplier == 0.25) {
+                damage = "Quarter Damage"
+            } else if (defenseJson[t].multiplier == 0.5) {
+                damage = "Half Damage";
+            } else if (defenseJson[t].multiplier == 1) {
+                damage = "Normal Damage"
+            } else if (defenseJson[t].multiplier == 2) {
+                damage = "Double Damage"
+            } else if (defenseJson[t].multiplier == 4) {
+                damage = "Quadruple Damage"
+            }
+
             table.innerHTML +=
                 `<tr>
             <td>${defenseJson[t].type}</td>
-            <td>${defenseJson[t].multiplier}</td>
+            <td>${damage}</td>
         </tr>`
             t++
         })
@@ -159,3 +191,7 @@ window.addEventListener("load", async function () {
 // Multiplier 1: "Normal damage"
 // Multiplier 2: "Double damage"
 // Multiplier 4: "Quadruple damage"
+
+
+
+// <td>${typeDataJson.offenseDamageMultipliers[t].multiplier}</td>
