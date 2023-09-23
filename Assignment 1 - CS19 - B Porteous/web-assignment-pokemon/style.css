@@ -1,19 +1,32 @@
-*{border: solid 2px black}
+/* * {
+    border: solid 2px black
+} */
 
 body {
     margin: 0px;
-
 }
+
+
+
+#container {
+    background-image: linear-gradient(180deg, #F8154A, #FFD316);
+    /* box-sizing: border-box; */
+    border: 30px #FFD316 solid;
+    border-radius: 30px;
+    margin: 10px;
+}
+
 
 #pokemon-image {
     background-image: url("https://i.redd.it/ho1gk6a1kxh31.jpg");
-    
+    border: 10px solid #EBBF00;
+
 }
 
 @media screen and (min-width: 500px) {
     #container {
         display: grid;
-        grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+        grid-template-columns: 0.25fr 1fr 2fr 1fr 1fr;
         grid-template-areas:
             "head head head head head"
             ". lsidebar content rsidebar ."
@@ -22,24 +35,31 @@ body {
 }
 
 
-.header,
-.footer {
+.header, .footer {
     background-color: slategray;
     text-align: center;
+
 
 }
 
 .header {
     grid-area: head;
+    padding: 10px;
+    font-family:'Handjet', 'Shadows into Light', sans-serif;
+    font-size: 2em;
 }
 
 .lsidebar {
     grid-area: lsidebar;
+    padding: 10px;
 }
 
 .content {
     background-color: lightgray;
     grid-area: content;
+    padding: 10px;
+    font-family: 'Special Elite', sans-serif;
+    font-weight: 3em;
 }
 
 .footer {
@@ -49,5 +69,9 @@ body {
 
 .rsidebar {
     grid-area: rsidebar;
+    padding: 10px;
+    background-color: lightgray;
+    padding: 10px;
+    font-family: 'Special Elite', sans-serif;
 }
 
