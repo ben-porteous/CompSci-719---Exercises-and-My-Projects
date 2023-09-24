@@ -9,7 +9,6 @@ window.addEventListener("load", async function () {
     const pokemonNumber = document.querySelector("#pokemon-number");
     const pokemonDescription = document.querySelector("#pokemon-description");
     const offense = document.querySelector("#offense");
-    const offenseTableContainer = document.querySelector("#offense-table-container")
     const defense = document.querySelector("#defense");
     const favorites = document.querySelector("#favorites")
     const favButton = document.querySelector("#favorites-button");
@@ -22,6 +21,12 @@ window.addEventListener("load", async function () {
         localStorage.setItem(pokemonDex, pokemonImageUrl)
         favorites.innerHTML += `<img src="${pokemonImageUrl}">`
     })
+
+    favClear.addEventListener("click", function () {
+        localStorage.clear()
+        favorites.innerHTML = ""
+    })
+
 
     //function to fetch of list of all pokemon and list on website
     async function getAllPokemon() {
@@ -46,8 +51,15 @@ window.addEventListener("load", async function () {
         const randomPokemonJson = await randomPokemonString.json();
         const randomDex = await randomPokemonJson.dexNumber;
         loadPokemonData(randomDex);
+        loadFavorites()
     }
 
+    //function to reload favorites:
+    function loadFavorites() {
+        Object.values(localStorage).forEach(function(item) {
+            favorites.innerHTML += `<img src="${item}">`
+        })
+    }
 
     //function to load & show an individ's pokemon's data into the site:
     async function loadPokemonData(pokemon) {
@@ -159,10 +171,6 @@ window.addEventListener("load", async function () {
     await getRandomPokemon();
 
 
-    favClear.addEventListener("click", function () {
-        localStorage.clear()
-        favorites.innerHTML = ""
-    })
 
 
 })

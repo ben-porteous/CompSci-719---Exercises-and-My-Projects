@@ -25,10 +25,9 @@ table {
 #pokemon-image {
     background-image: url("https://i.redd.it/ho1gk6a1kxh31.jpg");
     border: 10px solid #EBBF00;
-
 }
 
-@media screen and (min-width: 950px) {
+@media screen and (min-width: 1070px) {
     #container {
         display: grid;
         grid-template-columns: 0.25fr 0.5fr 2fr 1fr 0.75fr 0.25fr;
