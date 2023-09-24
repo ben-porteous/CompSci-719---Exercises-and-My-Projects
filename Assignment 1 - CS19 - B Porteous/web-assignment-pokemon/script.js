@@ -10,6 +10,8 @@ window.addEventListener("load", async function () {
     const pokemonDescription = document.querySelector("#pokemon-description");
     const offence = document.querySelector("#offence");
     const defense = document.querySelector("#defense");
+    const favDiv = document.querySelector("#favorites-div")
+    const favorites = document.querySelector("#favorites")
     const favButton = document.querySelector("#favorites-button");
     const favClear = document.querySelector("#clear-favorites")
     let a = 0;
@@ -57,8 +59,22 @@ window.addEventListener("load", async function () {
         defense.innerHTML = "<p>On Defense</p>";
         specificPokemonJson.types.forEach(loadPokemonOffense);
         loadPokemonDefense(pokemon);
+        loadFavoritesButton(pokemon, pokemonImage)
     };
 
+    //Function to add event Listener to load favorites
+    function loadFavoritesButton(pokemon, pokemonImage) {
+
+        favButton.addEventListener("click", function () {
+            favorites.innerHtml = ""
+            localStorage.setItem(pokemon, pokemonImage.src);
+            const localImageSites = Object.values(localStorage)
+            console.log(localImageSites)
+            localImageSites.forEach(function (item) {
+                favorites.innerHTML += `<img src=${item}>`
+            })
+        })
+    }
 
 
     //Function to load defence info and include in a table
@@ -78,6 +94,7 @@ window.addEventListener("load", async function () {
         })
     }
 
+    //Function to load Defence table
     async function loadPokemonDefense(pokemon) {
         const defenseString = await fetch(`https://cs719-a01-pt-server.trex-sandwich.com/api/pokemon/${pokemon}/defense-profile`)
         const defenseJson = await defenseString.json();
@@ -93,7 +110,8 @@ window.addEventListener("load", async function () {
             t++
         })
     }
-    // The code is taking a variable and then 
+
+    // Function to convert damage/offense multipliers to associated strings
     function convertDamageMultipliers(item) {
         if (item == 0) {
             damage = "No Damage";
@@ -149,27 +167,9 @@ window.addEventListener("load", async function () {
     await getRandomPokemon();
 
 
-
-    ///trying local storage: 
-    // let b = 0
-    let pokemonFavoritesName = ""
-    console.log(pokemonImage) 
-    favButton.addEventListener("click", function () {
-        // localStorage.setItem(`${b}`, `${b} value`)
-        // console.log(localStorage)
-        // b++;
-        let pokemonFavoritesName = 
-        localStorage.setItem("", "")
-    })
-
-
     favClear.addEventListener("click", function () {
         localStorage.clear()
     })
-
-
-
-
 
 
 })

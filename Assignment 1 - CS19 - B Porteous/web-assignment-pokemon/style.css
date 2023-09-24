@@ -109,3 +109,8 @@ table {
 .header, .content, .rsidebar, .lsidebar, #favorites-div {
     padding: 10px;
 }
+
+#favorites-div img {
+    width: 60%;
+    display: flex;
+}
