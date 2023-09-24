@@ -47,24 +47,21 @@ table {
 .header, .footer {
     background-color: #A8AAB4;
     text-align: center;
-
-
 }
 
 #favorites-div {
     grid-area: favorites;
+    text-align: center;
 }
 
 .header {
     grid-area: head;
     font-family:'Handjet', 'Shadows into Light', sans-serif;
     font-size: 2em;
-
 }
 
 .lsidebar {
     grid-area: lsidebar;
-
 }
 
 .lsidebar > p {
@@ -81,12 +78,10 @@ table {
 .footer {
     grid-area: foot;
     padding: 20px;
-
 }
 
 .rsidebar {
     grid-area: rsidebar;
-
     background-color: lightgray;
     font-family: 'Special Elite', sans-serif;
 }
@@ -119,4 +114,10 @@ table {
 
 #offense {
     display: flex;
+}
+
+button {
+    border-radius: 50px;
+    margin: 10px;
+    padding: 10px;
 }

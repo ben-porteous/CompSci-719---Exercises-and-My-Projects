@@ -18,8 +18,10 @@ window.addEventListener("load", async function () {
     let pokemonImageUrl;
 
     favButton.addEventListener("click", function () {
+        if (!Object.keys(localStorage).includes(pokemonDex.toString())) {
         localStorage.setItem(pokemonDex, pokemonImageUrl)
         favorites.innerHTML += `<img src="${pokemonImageUrl}">`
+        }
     })
 
     favClear.addEventListener("click", function () {
@@ -29,16 +31,15 @@ window.addEventListener("load", async function () {
 
 
     //function to fetch of list of all pokemon and list on website
-    async function getAllPokemon() {
+    async function fetchAllPokemon() {
         const allPokemonString = await fetch(`https://cs719-a01-pt-server.trex-sandwich.com/api/pokemon`);
         const allPokemonJson = await allPokemonString.json();
-        allPokemonJson.forEach(loadAllPokemon);
+        allPokemonJson.forEach(listAllPokemon);
     }
 
-    function loadAllPokemon(pokemon) {
-        const pokemonName = pokemon.name;
+    function listAllPokemon(pokemon) {
         const newPokemonPara = document.createElement("p");
-        newPokemonPara.innerText = pokemonName;
+        newPokemonPara.innerText = pokemon.name;
         lsidebar.appendChild(newPokemonPara);
         newPokemonPara.addEventListener("click", async function () {
             await loadPokemonData(pokemon.dexNumber);
@@ -54,7 +55,7 @@ window.addEventListener("load", async function () {
         loadFavorites()
     }
 
-    //function to reload favorites:
+    //function to load favorites on page loading:
     function loadFavorites() {
         Object.values(localStorage).forEach(function(item) {
             favorites.innerHTML += `<img src="${item}">`
@@ -167,7 +168,7 @@ window.addEventListener("load", async function () {
     }
 
 
-    await getAllPokemon();
+    await fetchAllPokemon();
     await getRandomPokemon();
 
 
