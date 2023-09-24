@@ -13,7 +13,6 @@ table {
     margin: 10px 0px;
 }
 
-
 #container {
     background-image: linear-gradient(180deg, #F8154A, #FFD316);
     border: 30px #FFD316 solid;
@@ -90,7 +89,6 @@ table {
     margin: 10px;
 }
 
-
 #pokemon-data {
     margin: 68px 0px 0px 0px;
 }
@@ -121,3 +119,4 @@ button {
     margin: 10px;
     padding: 10px;
 }
+
