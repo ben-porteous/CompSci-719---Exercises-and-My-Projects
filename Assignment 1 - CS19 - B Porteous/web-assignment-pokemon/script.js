@@ -63,18 +63,34 @@ window.addEventListener("load", async function () {
     };
 
     //Function to add event Listener to load favorites
-    function loadFavoritesButton(pokemon, pokemonImage) {
-
+    async function loadFavoritesButton(pokemon, pokemonImage) {
         favButton.addEventListener("click", function () {
             favorites.innerHtml = ""
             localStorage.setItem(pokemon, pokemonImage.src);
             const localImageSites = Object.values(localStorage)
-            console.log(localImageSites)
+            
+            console.log(localImageSites);
+            await filteredImages = localImageFunction()
+            console.log(localImageSites);
+            
+            //THEN NEED TO CHANGE BELOW TO FILTEREDIMAGES.FOREACH
             localImageSites.forEach(function (item) {
                 favorites.innerHTML += `<img src=${item}>`
             })
         })
     }
+
+    function localImageFunction(localImateSites) {
+        return localImageSites.filter((item, index) => localImageSites.indexOf(item) === index)
+
+    }
+    /*
+    .Filter Array Method
+.Filter is extremely similar to .Map, but the array provided back to you is a filtered array with only the qualifying values returned: 
+const numbers = [1, 2, 10, 20, 40, 50]
+const qualifyingNumbers = numbers.filter(number => number > 9);
+console.log(qualifyingNumbers) - will return [10, 20, 40, 50]
+*/
 
 
     //Function to load defence info and include in a table
