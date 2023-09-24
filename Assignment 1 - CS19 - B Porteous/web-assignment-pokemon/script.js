@@ -64,9 +64,7 @@ window.addEventListener("load", async function () {
     await getAllPokemon();
     await getRandomPokemon();
 
-
-
-
+    
     //Function to load defence info and include in a table
     async function loadPokemonOffense(type) {
         const typeDataString = await fetch(`https://cs719-a01-pt-server.trex-sandwich.com/api/types/${type}`)
