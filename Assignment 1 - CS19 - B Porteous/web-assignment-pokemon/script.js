@@ -10,6 +10,9 @@ window.addEventListener("load", async function () {
     const pokemonDescription = document.querySelector("#pokemon-description");
     const offence = document.querySelector("#offence");
     const defense = document.querySelector("#defense");
+    const favButton = document.querySelector("#favorites-button");
+    const favClear = document.querySelector("#clear-favorites")
+    let a = 0;
 
 
     //function to fetch of list of all pokemon and list on website
@@ -144,5 +147,29 @@ window.addEventListener("load", async function () {
 
     await getAllPokemon();
     await getRandomPokemon();
+
+
+
+    ///trying local storage: 
+    // let b = 0
+    let pokemonFavoritesName = ""
+    console.log(pokemonImage) 
+    favButton.addEventListener("click", function () {
+        // localStorage.setItem(`${b}`, `${b} value`)
+        // console.log(localStorage)
+        // b++;
+        let pokemonFavoritesName = 
+        localStorage.setItem("", "")
+    })
+
+
+    favClear.addEventListener("click", function () {
+        localStorage.clear()
+    })
+
+
+
+
+
 
 })

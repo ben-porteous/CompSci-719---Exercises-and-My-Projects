@@ -31,11 +31,11 @@ table {
 @media screen and (min-width: 950px) {
     #container {
         display: grid;
-        grid-template-columns: 0.25fr 1fr 2fr 1fr 1fr;
+        grid-template-columns: 0.25fr 1fr 2fr 1fr 1fr 0.25fr;
         grid-template-areas:
-            "head head head head head"
-            ". lsidebar content rsidebar ."
-            "foot foot foot foot foot";
+            "head head head head head head"
+            ". lsidebar content rsidebar favorites ."
+            "foot foot foot foot foot foot";
     }
 }
 
@@ -50,6 +50,10 @@ table {
     text-align: center;
 
 
+}
+
+#favorites-div {
+    grid-area: favorites;
 }
 
 .header {
@@ -98,10 +102,10 @@ table {
     margin: 68px 0px 0px 0px;
 }
 
-.footer, .lsidebar {
+.footer, .lsidebar, #favorites-div {
     font-family: 'Ysabeau Office', sans-serif;
 }
 
-.header, .content, .rsidebar, .lsidebar {
+.header, .content, .rsidebar, .lsidebar, #favorites-div {
     padding: 10px;
 }
