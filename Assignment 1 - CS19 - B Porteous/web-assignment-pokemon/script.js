@@ -3,31 +3,29 @@ window.addEventListener("load", async function () {
     //Variables from HTML:
     const lsidebar = document.querySelector("#lsidebar");
     const pokemonDataHeading = document.querySelector("#pokemon-data");
-    const pokemonDataTypes = document.querySelector("#pokemon-data-types")
-    const pokemonDetailsHeading = document.querySelector("#pokemon-details")
-    const content = document.querySelector("#content")
-    const pokemonImage = document.querySelector("#pokemon-image")
-    const pokemonNumber = document.querySelector("#pokemon-number")
-    const pokemonDescription = document.querySelector("#pokemon-description")
-    // const allPokemonTitle = document.querySelector("#all-pokemon-title")
-    const offence = document.querySelector("#offence")
-    const defense = document.querySelector("#defense")
-    let a = 0
+    const pokemonDataTypes = document.querySelector("#pokemon-data-types");
+    const pokemonDetailsHeading = document.querySelector("#pokemon-details");
+    const pokemonImage = document.querySelector("#pokemon-image");
+    const pokemonNumber = document.querySelector("#pokemon-number");
+    const pokemonDescription = document.querySelector("#pokemon-description");
+    const offence = document.querySelector("#offence");
+    const defense = document.querySelector("#defense");
 
 
     //function to fetch of list of all pokemon and list on website
     async function getAllPokemon() {
         const allPokemonString = await fetch(`https://cs719-a01-pt-server.trex-sandwich.com/api/pokemon`);
         const allPokemonJson = await allPokemonString.json();
-        allPokemonJson.forEach(loadAllPokemon)
+        allPokemonJson.forEach(loadAllPokemon);
     }
+
     function loadAllPokemon(pokemon) {
         const pokemonName = pokemon.name;
-        const newPokemonPara = document.createElement("p")
-        newPokemonPara.innerText = pokemonName
+        const newPokemonPara = document.createElement("p");
+        newPokemonPara.innerText = pokemonName;
         lsidebar.appendChild(newPokemonPara);
         newPokemonPara.addEventListener("click", async function () {
-            await loadPokemonData(pokemon.dexNumber)
+            await loadPokemonData(pokemon.dexNumber);
         })
     }
 
@@ -52,27 +50,22 @@ window.addEventListener("load", async function () {
         pokemonDataTypes.innerHTML = specificPokemonJson.types.reduce(function (acc, current) {
             return acc + ", " + current;
         });
-        offence.innerHTML = "<p>On Offense:</p>"
-        defense.innerHTML = "<p>On Defense</p>"
-        specificPokemonJson.types.forEach(loadPokemonOffense)
-        loadPokemonDefense(pokemon)
-
+        offence.innerHTML = "<p>On Offense:</p>";
+        defense.innerHTML = "<p>On Defense</p>";
+        specificPokemonJson.types.forEach(loadPokemonOffense);
+        loadPokemonDefense(pokemon);
     };
 
 
 
-    await getAllPokemon();
-    await getRandomPokemon();
-
-    
     //Function to load defence info and include in a table
     async function loadPokemonOffense(type) {
-        const typeDataString = await fetch(`https://cs719-a01-pt-server.trex-sandwich.com/api/types/${type}`)
-        const typeDataJson = await typeDataString.json()
+        const typeDataString = await fetch(`https://cs719-a01-pt-server.trex-sandwich.com/api/types/${type}`);
+        const typeDataJson = await typeDataString.json();
         const table = createTable(`${type} type attacks`, "Defending Type:", "Damage Dealt:", offence);
-        let t = 0
+        let t = 0;
         typeDataJson.offenseDamageMultipliers.forEach(function () {
-            let damage = convertDamageMultipliers(typeDataJson.offenseDamageMultipliers[t].multiplier)
+            let damage = convertDamageMultipliers(typeDataJson.offenseDamageMultipliers[t].multiplier);
             table.innerHTML +=
                 `<tr>
                 <td>${typeDataJson.offenseDamageMultipliers[t].type}</td>
@@ -100,19 +93,19 @@ window.addEventListener("load", async function () {
     // The code is taking a variable and then 
     function convertDamageMultipliers(item) {
         if (item == 0) {
-            damage = "No Damage"
+            damage = "No Damage";
         } else if (item == 0.25) {
-            damage = "Quarter Damage"
+            damage = "Quarter Damage";
         } else if (item == 0.5) {
             damage = "Half Damage";
         } else if (item == 1) {
-            damage = "Normal Damage"
+            damage = "Normal Damage";
         } else if (item == 2) {
-            damage = "Double Damage"
+            damage = "Double Damage";
         } else if (item == 4) {
-            damage = "Quadruple Damage"
+            damage = "Quadruple Damage";
         }
-        return damage
+        return damage;
     }
 
 
@@ -149,61 +142,7 @@ window.addEventListener("load", async function () {
     }
 
 
-
-    ////////FROM HERE ALL IS WORK IN PROGRESS
-
-
-
-
-
-    //add ; to the end of each line
+    await getAllPokemon();
+    await getRandomPokemon();
 
 })
-
-
-
-
-// Rather than display multiplier values directly, text should be displayed instead, as follows [2 marks]:
-
-// Multiplier 0: "No damage"
-// Multiplier 0.25: "Quarter damage"
-// Multiplier 0.5: "Half damage"
-// Multiplier 1: "Normal damage"
-// Multiplier 2: "Double damage"
-// Multiplier 4: "Quadruple damage"
-
-
-
-// <td>${typeDataJson.offenseDamageMultipliers[t].multiplier}</td>
-
-
-            // let damage = ""
-            // if (typeDataJson.offenseDamageMultipliers[t].multiplier == 0) {
-            //     damage = "No Damage"
-            // } else if (typeDataJson.offenseDamageMultipliers[t].multiplier == 0.25) {
-            //     damage = "Quarter Damage"
-            // } else if (typeDataJson.offenseDamageMultipliers[t].multiplier == 0.5) {
-            //     damage = "Half Damage";
-            // } else if (typeDataJson.offenseDamageMultipliers[t].multiplier == 1) {
-            //     damage = "Normal Damage"
-            // } else if (typeDataJson.offenseDamageMultipliers[t].multiplier == 2) {
-            //     damage = "Double Damage"
-            // } else if (typeDataJson.offenseDamageMultipliers[t].multiplier == 4) {
-            //     damage = "Quadruple Damage"
-            // }
-
-
-
-            // if (defenseJson[t].multiplier == 0) {
-            //     damage = "No Damage"
-            // } else if (defenseJson[t].multiplier == 0.25) {
-            //     damage = "Quarter Damage"
-            // } else if (defenseJson[t].multiplier == 0.5) {
-            //     damage = "Half Damage";
-            // } else if (defenseJson[t].multiplier == 1) {
-            //     damage = "Normal Damage"
-            // } else if (defenseJson[t].multiplier == 2) {
-            //     damage = "Double Damage"
-            // } else if (defenseJson[t].multiplier == 4) {
-            //     damage = "Quadruple Damage"
-            // }
