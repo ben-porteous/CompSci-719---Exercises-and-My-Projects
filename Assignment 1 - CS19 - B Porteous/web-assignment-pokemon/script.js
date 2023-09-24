@@ -8,9 +8,9 @@ window.addEventListener("load", async function () {
     const pokemonImage = document.querySelector("#pokemon-image");
     const pokemonNumber = document.querySelector("#pokemon-number");
     const pokemonDescription = document.querySelector("#pokemon-description");
-    const offence = document.querySelector("#offence");
+    const offense = document.querySelector("#offense");
+    const offenseTableContainer = document.querySelector("#offense-table-container")
     const defense = document.querySelector("#defense");
-    // const favDiv = document.querySelector("#favorites-div")
     const favorites = document.querySelector("#favorites")
     const favButton = document.querySelector("#favorites-button");
     const favClear = document.querySelector("#clear-favorites")
@@ -61,11 +61,10 @@ window.addEventListener("load", async function () {
         pokemonDataTypes.innerHTML = specificPokemonJson.types.reduce(function (acc, current) {
             return acc + ", " + current;
         });
-        offence.innerHTML = "<p>On Offense:</p>";
+        offense.innerHTML = ""
         defense.innerHTML = "<p>On Defense</p>";
         specificPokemonJson.types.forEach(loadPokemonOffense);
         loadPokemonDefense(pokemon);
-        // loadFavoritesButton(pokemon, pokemonImage)
         pokemonDex = specificPokemonJson.dexNumber;
         pokemonImageUrl = specificPokemonJson.imageUrl;
     };
@@ -74,7 +73,7 @@ window.addEventListener("load", async function () {
     async function loadPokemonOffense(type) {
         const typeDataString = await fetch(`https://cs719-a01-pt-server.trex-sandwich.com/api/types/${type}`);
         const typeDataJson = await typeDataString.json();
-        const table = createTable(`${type} type attacks`, "Defending Type:", "Damage Dealt:", offence);
+        const table = createTable(`${type} type attacks`, "Defending Type:", "Damage Dealt:", offense);
         let t = 0;
         typeDataJson.offenseDamageMultipliers.forEach(function () {
             let damage = convertDamageMultipliers(typeDataJson.offenseDamageMultipliers[t].multiplier);
