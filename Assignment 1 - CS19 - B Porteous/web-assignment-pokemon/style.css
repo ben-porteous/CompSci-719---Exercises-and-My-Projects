@@ -6,6 +6,15 @@ body {
     margin: 0px;
 }
 
+th {
+    font-size: large;
+}
+
+table {
+    border: 1px solid black;
+    border-collapse: separate;
+    border-spacing: 20px 15px;
+}
 
 
 #container {
@@ -36,7 +45,7 @@ body {
 
 
 .header, .footer {
-    background-color: slategray;
+    background-color: #A8AAB4;
     text-align: center;
 
 
@@ -47,11 +56,17 @@ body {
     padding: 10px;
     font-family:'Handjet', 'Shadows into Light', sans-serif;
     font-size: 2em;
+
 }
 
 .lsidebar {
     grid-area: lsidebar;
     padding: 10px;
+    font-family: 'Ysabeau Office', sans-serif;
+}
+
+.lsidebar > p {
+    margin: 10px 0px;
 }
 
 .content {
@@ -64,7 +79,7 @@ body {
 
 .footer {
     grid-area: foot;
-
+    padding: 20px;
 }
 
 .rsidebar {
@@ -75,3 +90,11 @@ body {
     font-family: 'Special Elite', sans-serif;
 }
 
+#offence, #defense {
+    margin: 10px;
+}
+
+
+#pokemon-data {
+    margin: 68px 0px 0px 0px;
+}

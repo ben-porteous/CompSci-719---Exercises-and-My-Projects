@@ -93,9 +93,9 @@ window.addEventListener("load", async function () {
             let damage = convertDamageMultipliers(defenseJson[t].multiplier)
             table.innerHTML +=
                 `<tr>
-            <td>${defenseJson[t].type}</td>
-            <td>${damage}</td>
-        </tr>`
+                    <td>${defenseJson[t].type}</td>
+                    <td>${damage}</td>
+                </tr>`
             t++
         })
     }
@@ -127,8 +127,8 @@ window.addEventListener("load", async function () {
         const tableHeader = document.createElement("th")
         tableHeader.setAttribute("colspan", 2)
         const tableRow1 = document.createElement("tr")
-        const tableCell1 = document.createElement("td")
-        const tableCell2 = document.createElement("td")
+        const tableCell1 = document.createElement("th")
+        const tableCell2 = document.createElement("th")
         const tableRow2 = document.createElement("tr")
         table.setAttribute("id", `table-row-${a}`)
 
