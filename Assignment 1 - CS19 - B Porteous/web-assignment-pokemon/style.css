@@ -1,7 +1,3 @@
-/* * {
-    border: solid 2px black
-} */
-
 body {
     margin: 0px;
 }
@@ -20,7 +16,6 @@ table {
 
 #container {
     background-image: linear-gradient(180deg, #F8154A, #FFD316);
-    /* box-sizing: border-box; */
     border: 30px #FFD316 solid;
     border-radius: 30px;
     margin: 10px;
@@ -59,7 +54,6 @@ table {
 
 .header {
     grid-area: head;
-    padding: 10px;
     font-family:'Handjet', 'Shadows into Light', sans-serif;
     font-size: 2em;
 
@@ -67,8 +61,7 @@ table {
 
 .lsidebar {
     grid-area: lsidebar;
-    padding: 10px;
-    font-family: 'Ysabeau Office', sans-serif;
+
 }
 
 .lsidebar > p {
@@ -78,7 +71,7 @@ table {
 .content {
     background-color: lightgray;
     grid-area: content;
-    padding: 10px;
+
     font-family: 'Special Elite', sans-serif;
     font-weight: 3em;
 }
@@ -86,14 +79,13 @@ table {
 .footer {
     grid-area: foot;
     padding: 20px;
-    font-family: 'Ysabeau Office', sans-serif;
+
 }
 
 .rsidebar {
     grid-area: rsidebar;
-    padding: 10px;
+
     background-color: lightgray;
-    padding: 10px;
     font-family: 'Special Elite', sans-serif;
 }
 
@@ -104,4 +96,12 @@ table {
 
 #pokemon-data {
     margin: 68px 0px 0px 0px;
+}
+
+.footer, .lsidebar {
+    font-family: 'Ysabeau Office', sans-serif;
+}
+
+.header, .content, .rsidebar, .lsidebar {
+    padding: 10px;
 }
