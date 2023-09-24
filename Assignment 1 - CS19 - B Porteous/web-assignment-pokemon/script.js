@@ -10,12 +10,18 @@ window.addEventListener("load", async function () {
     const pokemonDescription = document.querySelector("#pokemon-description");
     const offence = document.querySelector("#offence");
     const defense = document.querySelector("#defense");
-    const favDiv = document.querySelector("#favorites-div")
+    // const favDiv = document.querySelector("#favorites-div")
     const favorites = document.querySelector("#favorites")
     const favButton = document.querySelector("#favorites-button");
     const favClear = document.querySelector("#clear-favorites")
     let a = 0;
+    let pokemonDex;
+    let pokemonImageUrl;
 
+    favButton.addEventListener("click", function () {
+        localStorage.setItem(pokemonDex, pokemonImageUrl)
+        favorites.innerHTML += `<img src="${pokemonImageUrl}">`
+    })
 
     //function to fetch of list of all pokemon and list on website
     async function getAllPokemon() {
@@ -59,39 +65,10 @@ window.addEventListener("load", async function () {
         defense.innerHTML = "<p>On Defense</p>";
         specificPokemonJson.types.forEach(loadPokemonOffense);
         loadPokemonDefense(pokemon);
-        loadFavoritesButton(pokemon, pokemonImage)
+        // loadFavoritesButton(pokemon, pokemonImage)
+        pokemonDex = specificPokemonJson.dexNumber;
+        pokemonImageUrl = specificPokemonJson.imageUrl;
     };
-
-    //Function to add event Listener to load favorites
-    async function loadFavoritesButton(pokemon, pokemonImage) {
-        favButton.addEventListener("click", function () {
-            favorites.innerHtml = ""
-            localStorage.setItem(pokemon, pokemonImage.src);
-            const localImageSites = Object.values(localStorage)
-            
-            console.log(localImageSites);
-            await filteredImages = localImageFunction()
-            console.log(localImageSites);
-            
-            //THEN NEED TO CHANGE BELOW TO FILTEREDIMAGES.FOREACH
-            localImageSites.forEach(function (item) {
-                favorites.innerHTML += `<img src=${item}>`
-            })
-        })
-    }
-
-    function localImageFunction(localImateSites) {
-        return localImageSites.filter((item, index) => localImageSites.indexOf(item) === index)
-
-    }
-    /*
-    .Filter Array Method
-.Filter is extremely similar to .Map, but the array provided back to you is a filtered array with only the qualifying values returned: 
-const numbers = [1, 2, 10, 20, 40, 50]
-const qualifyingNumbers = numbers.filter(number => number > 9);
-console.log(qualifyingNumbers) - will return [10, 20, 40, 50]
-*/
-
 
     //Function to load defence info and include in a table
     async function loadPokemonOffense(type) {
@@ -185,6 +162,7 @@ console.log(qualifyingNumbers) - will return [10, 20, 40, 50]
 
     favClear.addEventListener("click", function () {
         localStorage.clear()
+        favorites.innerHTML = ""
     })
 
 
