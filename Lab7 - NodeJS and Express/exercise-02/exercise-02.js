@@ -11,8 +11,18 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // When a GET request is made to "/" (i.e. the root path), send "Hello World!" back to the client.
 app.get("/", function (req, res) {
-    res.send("Hello World!");
+    res.send("Hello Woolies 2!");
 });
+
+//
+app.get("/images", function (req, res) {
+    res.send("/images/Screenshot.png")
+})
+
+app.get("/about", function (req, res) {
+    console.log("testing 123")
+    res.send("I am Awesome!")
+})
 
 // Start the server running. Once the server is running, the given function will be called, which will
 // log a simple message to the server console. Any console.log() statements in your node.js code

@@ -17,9 +17,25 @@ app.get("/gimmeJSON", function (req, res) {
         address: "308 Negra Arroyo Lane"
     };
 
+    //The Alternative JSON object to return: 
+    const person2 = {
+        name: "Harold Houdini",
+        address: "123 Magician Street",
+        phone: "021 012 034"        
+    }
+
     // Send the JSON back to the client
-    res.json(person);
+    res.json(person2);
 });
+
+app.get("/randomNumber", function (req, res) {
+    let RND_NUM = Math.floor(Math.random() * 100)
+    console.log(RND_NUM)
+    const json = {
+        number: RND_NUM
+    }
+    res.json(json)
+})
 
 // Start the webapp running
 app.listen(port, function () {
