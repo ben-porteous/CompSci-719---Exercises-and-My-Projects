@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>My favorite things</title>
+    <link rel="stylesheet" href="./css/site.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>These are a few of my favorite things:</h1>
+        {{!TODO: Modify this to loop through the favourites array and render the result as a list}}
+        {{#if favorites}}
+            <ol>
+                {{#each favorites}}
+                <li>Item {{@index}}: {{this}}</li>
+                {{/each}}
+            </ol>
+        {{else}}
+            <p>I'm still deciding</p>
+        {{/if}}
+    </div>
+</body>
+
+</html>
