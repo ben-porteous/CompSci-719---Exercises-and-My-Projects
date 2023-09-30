@@ -16,25 +16,29 @@ app.get("/getGreeting", function (req, res) {
 
     // Gets the "name" query parameter (e.g. http://..../getGreeting?name=Andrew)
     const name = req.query.name;
+    const age = req.query.age
 
     const greeting = {
-        message: `Hello, ${name}!`
+        message: `Hello, ${name} of ${age} years old!`
     };
 
     res.json(greeting);
 });
 
 // When we receive a GET request to /processFirstForm, read the "name" and "address" query parameters.
-// These values will be equal to the values the user typed in the form. Then, return JSON with the same
-// data.
+// These values will be equal to the values the user typed in the form. Then, return JSON with the same data.
 app.get("/processFirstForm", function (req, res) {
 
-    const submittedName = req.query.name;
+    const submittedName = req.query.name;       
     const submittedAddres = req.query.address;
+    const submittedNumber = req.query.number;
+    const submittedAnimal = req.query.animal;
 
     const data = {
         name: submittedName,
-        address: submittedAddres
+        address: submittedAddres,
+        number: submittedNumber,
+        animal: submittedAnimal
     };
 
     res.json(data);
@@ -47,7 +51,9 @@ app.post("/processSecondForm", function (req, res) {
 
     const receivedData = {
         name: req.body.name,
-        address: req.body.address
+        address: req.body.address,
+        favoriteGame: req.body.game
+
     };
 
     res.json(receivedData);
@@ -57,14 +63,14 @@ app.post("/processSecondForm", function (req, res) {
 // different data types depending on how many checkboxes the user ticked in the form. To alleviate this
 // problem, pass it through the makeArray() function defined below, so we know it is ALWAYS an array.
 // Then, create a JSON object with some info, and send it back.
-app.get("/processThirdForm", function (req, res) {
+app.post("/processThirdForm", function (req, res) {
 
     // Within our terminal window, we can see that the logged output is either undefined, or
     // a string, or an array, depending on the number of checkboxes which were selected.
-    console.log(req.query.color);
+    console.log(req.body.color);
 
     // This will ALWAYS be an array, with 0, 1, or multiple values.
-    const favoriteColorsArray = makeArray(req.query.color);
+    const favoriteColorsArray = makeArray(req.body.color);
 
     const info = {
         numFavorites: favoriteColorsArray.length,

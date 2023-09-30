@@ -17,6 +17,15 @@
         <input type="text" name="name" id="txtName"><br>
         <label for="txtAddress">Address:</label><br>
         <input type="text" name="address" id="txtAddress"><br>
+
+
+        <label for="number">Number: </label><br>
+        <input type="number" name="number"><br>
+
+        <h4>What is your Favorite Animal? Please select from the following:</h4>
+        <label><input type="radio" name="animal" value="dog">Dog</label>
+        <label><input type="radio" name="animal" value="cat">Cat</label> <br>
+
         <button type="submit">Submit!</button>
     </form>
 
@@ -26,11 +35,15 @@
         <input type="text" name="name" id="txtName2"><br>
         <label for="txtAddress2">Address:</label><br>
         <input type="text" name="address" id="txtAddress2"><br>
+        <label><input type="radio" name="game" value="monopoly">Monopoly</label>
+        <label><input type="radio" name="game" value="Ps4">Ps4</label>
+        <label><input type="radio" name="game" value="XBox">XBox</label>
+
         <button type="submit">Submit!</button>
     </form>
 
     <h1>A form with multiple fields with the same name</h1>
-    <form action="./processThirdForm" method="GET">
+    <form action="./processThirdForm" method="POST">
         <p>Select your favorite color(s):</p>
         <input type="checkbox" name="color" value="red" id="chkColorRed"><label for="chkColorRed">Red</label>
         <input type="checkbox" name="color" value="green" id="chkColorGreen"><label for="chkColorGreen">Green</label>
