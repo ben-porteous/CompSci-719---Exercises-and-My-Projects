@@ -49,6 +49,7 @@ app.post("/uploadImage", upload.single("imageFile"), function (req, res) {
     res.locals.caption = req.body.caption;
     res.render("uploadDetails");
 
+
 });
 
 // Start the server running. Once the server is running, the given function will be called, which will
