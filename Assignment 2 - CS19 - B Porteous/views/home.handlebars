@@ -7,7 +7,10 @@
     <div class="sprite-container">
       {{! TODO Display list of Pokemon here. }}
       {{#each pokemon}}
-        <p>{{this.name}}</p>
+        <button>
+          <img src="{{this.smallImageUrl}}">
+          <span>{{this.name}}</span>
+          </button>
       {{/each}}
     </div>
   </div>
