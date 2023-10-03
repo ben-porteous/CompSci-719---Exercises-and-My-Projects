@@ -1,0 +1,30 @@
+<div class="container">
+    <h1>Image uploads!</h1>
+    <p>This example allows you to upload a single <em>image</em> file.</p>
+
+    <div class="card">
+        <div class="card-body">
+            <h2>Image upload form</h2>
+
+            <form action="./uploadImage" method="POST" enctype="multipart/form-data">
+
+                <div class="form-group">
+                    <label for="inpFile">Upload an image here!</label>
+                    <!-- The "accept" attribute can provide a filter for suggested file types - but
+                    we CANNOT prevent the user from selecting anything (we have to do that server-side). -->
+                    <input id="inpFile" type="file" name="imageFile" accept=".png,.jpg,.jpeg,.bmp">
+                </div>
+
+                <div class="form-group">
+                    <label for="txtCaption">Caption:</label>
+                    <input id="txtCaption" type="text" name="caption">
+                </div>
+
+                <div class="form-group align-start">
+                    <button type="submit">Upload!</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
