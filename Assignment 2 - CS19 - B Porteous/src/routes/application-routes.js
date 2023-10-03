@@ -4,8 +4,10 @@ const router = express.Router();
 
 router.get("/", function (req, res) {
   // TODO Add necessary data to res.locals before rendering the "home" page.
-  res.locals.pokemon = getAllPokemon() 
+  const pokemon = getAllPokemon()
 
+  res.locals.pokemon = pokemon
+  res.locals.openingPokemonImage = pokemon[57].imageUrl
   res.render("home");
 });
 
