@@ -55,11 +55,9 @@ function makeArray(input) {
 
 ///MY CODE: 
 app.post("/results", function (req, res) {
-  const distance = req.body.distance
-  const fuel = req.body.fuel
-  const restaurants = req.body.restaurants
-
-  console.log(distance, fuel, restaurants)
+  res.locals.distance = req.body.distance
+  res.locals.fuel = req.body.fuel
+  res.locals.restaurants = req.body.restaurants
 
   res.render("results")
 })
