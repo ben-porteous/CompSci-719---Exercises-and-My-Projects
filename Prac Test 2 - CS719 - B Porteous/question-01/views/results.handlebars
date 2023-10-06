@@ -5,16 +5,26 @@
 <p>Fuel Price: ${{fuelPrice}}.00</p>
 <p>Total Price: ${{totalPrice}}</p>
 <p>Number of Stops: {{restaurantsTotal}}</p>
-<p>Average Price per Stop: ${{averageStopPrice}}</p>
+
+
+<p>Average Price per Stop:
+    {{#if restaurantsTotal}}
+    ${{averageStopPrice}}</p>
+{{else}}
+No Stops Were Entered</p>
+{{/if}}
+
+
 
 
 <h1>Restaurants Visited:</h1>
+
+{{#if restaurants}}
 <ul>
-    {{#if restaurants}}
-        {{#each restaurants}}
-        <li>{{this}}</li>
-        {{/each}}
-    {{else}}
-        <p>No Restaurants Selected</p>
-    {{/if}}
+    {{#each restaurants}}
+    <li>{{this}}</li>
+    {{/each}}
 </ul>
+{{else}}
+<p>No Restaurants Were Entered</p>
+{{/if}}
