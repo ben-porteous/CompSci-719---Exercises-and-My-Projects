@@ -53,18 +53,22 @@ function makeArray(input) {
 }
 
 
-///MY CODE: 
+//Results of the Form Submission: 
 app.post("/results", function (req, res) {
   const distance = req.body.distance;
   const fuelUsed = req.body.fuel;
   const fuelPrice = req.body.fuelprice;
+  const totalPrice = (fuelUsed * fuelPrice).toFixed(2);
   const restaurants = makeArray(req.body.restaurants);
+  const restaurantsTotal = restaurants.length;
   
   res.locals.distance = distance;
   res.locals.fuel = fuelUsed;
   res.locals.fuelPrice = fuelPrice;
-  res.locals.totalPrice = fuelUsed * fuelPrice;
-  res.locals.restaurants = restaurants
+  res.locals.totalPrice = totalPrice;
+  res.locals.restaurants = restaurants;
+  res.locals.restaurantsTotal = restaurantsTotal;
+  res.locals.averageStopPrice = (totalPrice/restaurantsTotal).toFixed(2);
 
   res.render("results")
 })
