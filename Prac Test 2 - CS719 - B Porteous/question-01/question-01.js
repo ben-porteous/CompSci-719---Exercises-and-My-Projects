@@ -51,3 +51,15 @@ function makeArray(input) {
       return [input];
   }
 }
+
+
+///MY CODE: 
+app.post("/results", function (req, res) {
+  const distance = req.body.distance
+  const fuel = req.body.fuel
+  const restaurants = req.body.restaurants
+
+  console.log(distance, fuel, restaurants)
+
+  res.render("results")
+})
