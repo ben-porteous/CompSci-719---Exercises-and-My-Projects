@@ -1,5 +1,16 @@
-<h1>TESTING</h1>
+<h1>Trip Statistics</h1>
 
-<p>The distance is {{distance}}</p>
-<p>The Fuel Used is {{fuel}}</p>
-<p>The Restaurants Chosen Are: {{restaurants}}</p>
+<p>Total Distance Travelled: {{distance}}</p>
+<p>Litres of Fuel Used: {{fuel}}</p>
+
+
+<h1>Restaurants Visited:</h1>
+<ul>
+    {{#if restaurants}}
+        {{#each restaurants}}
+        <li>{{this}}</li>
+        {{/each}}
+    {{else}}
+        <p>No Restaurants Selected</p>
+    {{/if}}
+</ul>
