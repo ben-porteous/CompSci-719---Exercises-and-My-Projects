@@ -16,4 +16,12 @@ router.get("/", function (req, res) {
   res.render("home");
 });
 
+router.get("/dexSearch", async function(req, res) {
+  const dexNumber = req.query.newPokemonDex
+  console.log(dexNumber)
+  const pokemonString = await fetch(`https://pokeapi.co/api/v2/pokemon/${dexNumber}`)
+  const pokemonJson = await pokemonString.json()
+  res.json(pokemonJson)
+})
+
 module.exports = router;
