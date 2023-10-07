@@ -1,6 +1,13 @@
 const express = require("express");
 const { getAllPokemon } = require("../db/pokemon-db");
 const router = express.Router();
+const db = require("../db/db.js")
+const pokemonDatabase = require("../json/pokemon.json")
+const fs = require("fs")
+
+function writeJson(object, fileName) {
+  fs.appendFileSync(fileName, JSON.stringify(object));
+}
 
 router.get("/", function (req, res) {
   // TODO Add necessary data to res.locals before rendering the "home" page.
@@ -31,7 +38,7 @@ router.get("/dexSearch", async function(req, res) {
     smallImageUrl: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${dexNumber}.png`,
     types: `${types}`
   }
-  
+  writeJson(requiredPokemonJson, "./src/json/pokemon.json")
   res.json(requiredPokemonJson)
   //Need to amend route handler to append requiredPokemonJson to pokemon.json file
 })
