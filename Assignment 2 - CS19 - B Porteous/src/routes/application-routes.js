@@ -29,13 +29,14 @@ router.get("/", function (req, res) {
   res.render("home");
 });
 
-router.get("/dexSearch", async function(req, res) {
+router.get("/dexSearch", async function (req, res) {
   const dexNumber = req.query.newPokemonDex
   const pokemonString = await fetch(`https://pokeapi.co/api/v2/pokemon/${dexNumber}`)
   const pokemonJson = await pokemonString.json()
+  // const pokemonDexEntryString = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${dexNumber}`)
   const types = []
-  pokemonJson.types.forEach(function(type) {
-      types.push(type.type.name)
+  pokemonJson.types.forEach(function (type) {
+    types.push(type.type.name)
   })
   const requiredPokemonJson = {
     dexNumber: dexNumber,
@@ -44,14 +45,20 @@ router.get("/dexSearch", async function(req, res) {
     smallImageUrl: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${dexNumber}.png`,
     types: `${types}`
   }
-  const pokemonJsonFile = readJson("./src/json/pokemon.json")
-  // console.log(pokemonJsonFile)
-  pokemonJsonFile.push(requiredPokemonJson)
-  // console.log(pokemonJsonFile)
-  writeJson(pokemonJsonFile, "./src/json/pokemon.json")
 
-  
+  const pokemonJsonFile = readJson("./src/json/pokemon.json")
+  const stringedDatabase = JSON.stringify(pokemonJsonFile)
+  //Function to check if pokemon is in database - if no then add 
+  if (stringedDatabase.includes(dexNumber)) {
+    console.log("This pokemon is already in the list")
+  } else {
+    pokemonJsonFile.push(requiredPokemonJson)
+    writeJson(pokemonJsonFile, "./src/json/pokemon.json")
+  }
+
+
   res.redirect("/")
 })
 
 module.exports = router;
+
