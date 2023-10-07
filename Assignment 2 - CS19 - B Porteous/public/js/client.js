@@ -13,7 +13,7 @@ window.addEventListener("load", function () {
     button.addEventListener("click", function () {
       loadPokemonDetails(pokemonJson);
       clearClass()
-      button.classList.add("selected")
+      button.classList.add("selected");
     });
   });
 
@@ -29,7 +29,7 @@ window.addEventListener("load", function () {
   };
 
   function clearClass() {
-    const selected = document.querySelectorAll(".selected")
+    const selected = document.querySelectorAll(".selected");
     selected.forEach(function(element) {
       element.classList.remove("selected");
     })
@@ -38,10 +38,3 @@ window.addEventListener("load", function () {
 
 });
 
-//   }
-
-//   // pokemonButtons.addEventListener("click", function() {
-//   //   console.log("Your Button Works!")
-//   // })
-
-// });
