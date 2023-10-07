@@ -53,7 +53,7 @@ router.get("/dexSearch", async function (req, res) {
 
   const pokemonJsonFile = readJson("./src/json/pokemon.json")
   const stringedDatabase = JSON.stringify(pokemonJsonFile)
-  //Function to check if pokemon is in database - if no then add 
+
   if (stringedDatabase.includes(dexNumber)) {
     console.log("This pokemon is already in the list")
   } else {
@@ -65,4 +65,5 @@ router.get("/dexSearch", async function (req, res) {
 })
 
 module.exports = router;
+
 
