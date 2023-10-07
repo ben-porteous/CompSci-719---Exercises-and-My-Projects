@@ -25,6 +25,8 @@ window.addEventListener("load", function () {
     <p><strong>About ${pokemonJson.name}:</strong> ${pokemonJson.dexEntry}</p>
     `
   };
+
+  
 });
 
 //   }
