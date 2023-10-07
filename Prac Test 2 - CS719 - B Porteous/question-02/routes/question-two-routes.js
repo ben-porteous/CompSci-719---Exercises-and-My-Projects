@@ -7,12 +7,10 @@ const router = express.Router();
 
 // TODO Your Code Here
 router.get("/", function (req, res) {
-
     res.render("home")
 })
 
 router.get("/hillary", function (req, res) {
-
     res.render("hillary")
 })
 
