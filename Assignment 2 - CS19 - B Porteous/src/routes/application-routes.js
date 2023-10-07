@@ -20,12 +20,16 @@ router.get("/dexSearch", async function(req, res) {
   const dexNumber = req.query.newPokemonDex
   const pokemonString = await fetch(`https://pokeapi.co/api/v2/pokemon/${dexNumber}`)
   const pokemonJson = await pokemonString.json()
+  const types = []
+  pokemonJson.types.forEach(function(type) {
+      types.push(type.type.name)
+  })
   const requiredPokemonJson = {
     dexNumber: dexNumber,
     name: `${pokemonJson.species.name}`,
     imageUrl: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${dexNumber}.png`,
     smallImageUrl: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${dexNumber}.png`,
-    types: `${pokemonJson.types[0].type.name}`
+    types: `${types}`
   }
   res.json(requiredPokemonJson)
 })
