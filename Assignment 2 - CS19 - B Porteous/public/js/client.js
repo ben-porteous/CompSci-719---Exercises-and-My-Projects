@@ -12,6 +12,8 @@ window.addEventListener("load", function () {
     const pokemonJson = await pokemonString.json();
     button.addEventListener("click", function () {
       loadPokemonDetails(pokemonJson);
+      clearClass()
+      button.classList.add("selected")
     });
   });
 
@@ -25,6 +27,13 @@ window.addEventListener("load", function () {
     <p><strong>About ${pokemonJson.name}:</strong> ${pokemonJson.dexEntry}</p>
     `
   };
+
+  function clearClass() {
+    const selected = document.querySelectorAll(".selected")
+    selected.forEach(function(element) {
+      element.classList.remove("selected");
+    })
+  }
 
   
 });
