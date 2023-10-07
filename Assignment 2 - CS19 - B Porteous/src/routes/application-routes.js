@@ -25,7 +25,7 @@ router.get("/dexSearch", async function(req, res) {
     name: `${pokemonJson.species.name}`,
     imageUrl: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${dexNumber}.png`,
     smallImageUrl: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${dexNumber}.png`,
-    types: `${pokemonJson.types}`
+    types: `${pokemonJson.types[0].type.name}`
   }
   res.json(requiredPokemonJson)
 })
