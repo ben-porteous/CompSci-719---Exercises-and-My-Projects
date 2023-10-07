@@ -14,11 +14,13 @@ router.get("/", function (req, res) {
 
 router.get("/hillary", function (req, res) {
     res.locals.name = "Edmund Hillary"
+    res.locals.hillary = "Hillary"
     res.render("hillary")
 })
 
 router.get("/sheppard", function (req, res) {
     res.locals.name = "Kate Sheppard"
+    res.locals.sheppard = "Sheppard"
     res.render("sheppard")
 })
 
