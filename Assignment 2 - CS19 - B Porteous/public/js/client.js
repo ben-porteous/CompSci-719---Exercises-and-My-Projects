@@ -6,17 +6,14 @@ window.addEventListener("load", function () {
 
   const pokemonButtons = document.querySelectorAll(".buttons")
   const detailsContainer = document.querySelector("#detailsContainer")
-  let dex = 1
 
   pokemonButtons.forEach(async function (button) {
-    const pokemonString = await fetch(`./api/pokemon/${dex}`)
+    const pokemonString = await fetch(`./api/pokemon/${button.id}`)
     const pokemonJson = await pokemonString.json()
-    dex = dex + 1
-    button.addEventListener("click", async function () {
+    button.addEventListener("click", function () {
       console.log(pokemonJson)
       loadPokemonDetails(pokemonJson)
     })
-
   })
 
 
