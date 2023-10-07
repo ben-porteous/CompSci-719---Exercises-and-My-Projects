@@ -1,7 +1,6 @@
 const express = require("express");
 const { getAllPokemon } = require("../db/pokemon-db");
 const router = express.Router();
-const dbWriter = require("../db/db.js")
 
 router.get("/", function (req, res) {
   // TODO Add necessary data to res.locals before rendering the "home" page.
@@ -19,7 +18,6 @@ router.get("/", function (req, res) {
 
 router.get("/dexSearch", async function(req, res) {
   const dexNumber = req.query.newPokemonDex
-  console.log(dexNumber)
   const pokemonString = await fetch(`https://pokeapi.co/api/v2/pokemon/${dexNumber}`)
   const pokemonJson = await pokemonString.json()
   const requiredPokemonJson = {
