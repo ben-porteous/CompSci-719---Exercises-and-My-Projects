@@ -5,12 +5,31 @@ window.addEventListener("load", function () {
   // there).
 
   const pokemonButtons = document.querySelectorAll(".buttons")
+  const detailsContainer = document.querySelector("#detailsContainer")
+  let dex = 1
 
   pokemonButtons.forEach(function(button) {
-    button.addEventListener("click", function(){
-      console.log("Button successful")
+    button.addEventListener("click", async function(){
+     const pokemonString = await fetch(`./api/pokemon/1`)
+     const pokemonJson = await pokemonString.json()
+      // loadPokemonDetails(pokemonJson)
+      console.log(pokemonJson)
     })
+    dex++
   })
+
+
+  function loadPokemonDetails(pokemon){
+    console.log("to be completed")
+    // detailsContainer.innerHTML = `
+    // // <h1>Details</h1>
+    // // {{! TODO Display info about a single Pokemon here. }}
+    // // <img src="{{openingPokemonImage}}">
+    // // <h1>#{{openingPokemonNumber}} {{openingPokemonName}}</h1>
+    // // <p><strong>Types:</strong> {{openingPokemonTypes}}</p>
+    // // <p><strong>About {{openingPokemonName}}:</strong> {{openingPokemonAbout}}</p>
+    // // `
+  }
 })
 
 //   }

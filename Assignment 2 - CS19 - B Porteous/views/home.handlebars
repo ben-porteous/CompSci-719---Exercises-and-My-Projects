@@ -7,7 +7,7 @@
     <div class="sprite-container">
       {{! TODO Display list of Pokemon here. }}
       {{#each pokemon}}
-      <button class="buttons" id="button-{{this.name}}">
+      <button class="buttons" id="{{this.name}}">
         <img src="{{this.smallImageUrl}}">
         <span>{{this.name}}</span>
       </button>
@@ -16,7 +16,7 @@
   </div>
 
   <div class="section">
-    <div class="details">
+    <div class="details" id="detailsContainer">
       <h1>Details</h1>
       {{! TODO Display info about a single Pokemon here. }}
       <img src="{{openingPokemonImage}}">
