@@ -9,12 +9,14 @@ router.get("/test", function (req, res) {
     res.send("TESTING")
 })
 
+//If client visits/requests /api/pokemon/:dexNumber then individaul json pokemon data returned 
 router.get("/:dexNumber", function (req, res) {
-
     const pokemonJson = require("../../db/pokemon-db.js")
-    console.log(pokemonJson.getPokemonByDexNumber(req.params.dexNumber))
-
-    res.json(pokemonJson.getPokemonByDexNumber(req.params.dexNumber))
+    if (pokemonJson.getPokemonByDexNumber(req.params.dexNumber)) {
+        res.json(pokemonJson.getPokemonByDexNumber(req.params.dexNumber))
+    } else {
+        res.sendStatus(404)
+    }
 });
 
 
