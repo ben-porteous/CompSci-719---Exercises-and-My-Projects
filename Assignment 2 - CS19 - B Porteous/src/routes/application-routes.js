@@ -3,10 +3,16 @@ const { getAllPokemon } = require("../db/pokemon-db");
 const router = express.Router();
 const db = require("../db/db.js")
 const pokemonDatabase = require("../json/pokemon.json")
-const fs = require("fs")
+const fs = require("fs");
+const { ifError } = require("assert");
+
+function readJson(fileName) {
+  const data = fs.readFileSync(fileName);
+  return JSON.parse(data.toString("utf-8"));
+}
 
 function writeJson(object, fileName) {
-  fs.appendFileSync(fileName, JSON.stringify(object));
+  fs.writeFileSync(fileName, JSON.stringify(object));
 }
 
 router.get("/", function (req, res) {
@@ -38,9 +44,14 @@ router.get("/dexSearch", async function(req, res) {
     smallImageUrl: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${dexNumber}.png`,
     types: `${types}`
   }
-  writeJson(requiredPokemonJson, "./src/json/pokemon.json")
+  const pokemonJsonFile = readJson("./src/json/pokemon.json")
+  console.log(pokemonJsonFile)
+  pokemonJsonFile.push(requiredPokemonJson)
+  console.log(pokemonJsonFile)
+  writeJson(pokemonJsonFile, "./src/json/pokemon.json")
+  
+  
   res.json(requiredPokemonJson)
-  //Need to amend route handler to append requiredPokemonJson to pokemon.json file
 })
 
 module.exports = router;
