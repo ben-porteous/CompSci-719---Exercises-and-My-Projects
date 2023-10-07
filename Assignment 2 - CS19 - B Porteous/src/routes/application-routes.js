@@ -45,13 +45,13 @@ router.get("/dexSearch", async function(req, res) {
     types: `${types}`
   }
   const pokemonJsonFile = readJson("./src/json/pokemon.json")
-  console.log(pokemonJsonFile)
+  // console.log(pokemonJsonFile)
   pokemonJsonFile.push(requiredPokemonJson)
-  console.log(pokemonJsonFile)
+  // console.log(pokemonJsonFile)
   writeJson(pokemonJsonFile, "./src/json/pokemon.json")
+
   
-  
-  res.json(requiredPokemonJson)
+  res.redirect("/")
 })
 
 module.exports = router;
