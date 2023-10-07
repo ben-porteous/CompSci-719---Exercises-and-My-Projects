@@ -8,27 +8,26 @@ window.addEventListener("load", function () {
   const detailsContainer = document.querySelector("#detailsContainer")
   let dex = 1
 
-  pokemonButtons.forEach(function(button) {
-    button.addEventListener("click", async function(){
-     const pokemonString = await fetch(`./api/pokemon/1`)
-     const pokemonJson = await pokemonString.json()
-      // loadPokemonDetails(pokemonJson)
+  pokemonButtons.forEach(async function (button) {
+    const pokemonString = await fetch(`./api/pokemon/${dex}`)
+    const pokemonJson = await pokemonString.json()
+    dex = dex + 1
+    button.addEventListener("click", async function () {
       console.log(pokemonJson)
+      loadPokemonDetails(pokemonJson)
     })
-    dex++
+
   })
 
 
-  function loadPokemonDetails(pokemon){
-    console.log("to be completed")
-    // detailsContainer.innerHTML = `
-    // // <h1>Details</h1>
-    // // {{! TODO Display info about a single Pokemon here. }}
-    // // <img src="{{openingPokemonImage}}">
-    // // <h1>#{{openingPokemonNumber}} {{openingPokemonName}}</h1>
-    // // <p><strong>Types:</strong> {{openingPokemonTypes}}</p>
-    // // <p><strong>About {{openingPokemonName}}:</strong> {{openingPokemonAbout}}</p>
-    // // `
+  function loadPokemonDetails(pokemonJson) {
+    detailsContainer.innerHTML = `
+    <h1>Details</h1>
+    <img src="${pokemonJson.imageUrl}">
+    <h1># ${pokemonJson.dexNumber} ${pokemonJson.name}</h1>
+    <p><strong>Types:</strong> ${pokemonJson.types}</p>
+    <p><strong>About ${pokemonJson.name}:</strong> ${pokemonJson.dexExtry}</p>
+    `
   }
 })
 
