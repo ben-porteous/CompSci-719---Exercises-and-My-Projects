@@ -2,8 +2,8 @@
 <html>
 
 <head>
-    <title></title>
 
+    <title>{{name}}</title>
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.2.0.js" integrity="sha256-wPFJNIFlVY49B+CuAIrDr932XSb6Jk3J1M22M3E2ylQ=" crossorigin="anonymous"></script>
 
@@ -39,7 +39,11 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="home.html">Home</a></li>
+                        <li 
+                        {{#if homePage}}
+                        class="active"
+                        {{/if}}
+                        ><a href="/">Home</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pick a Famous NZer <span class="caret"></span></a>
                             <ul class="dropdown-menu">
