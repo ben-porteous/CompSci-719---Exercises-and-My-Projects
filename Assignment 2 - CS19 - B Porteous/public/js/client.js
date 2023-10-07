@@ -4,17 +4,16 @@ window.addEventListener("load", function () {
   // in the appropriate place on the HTML page (overwriting any data which was already
   // there).
 
-  const pokemonButtons = document.querySelectorAll(".buttons")
-  const detailsContainer = document.querySelector("#detailsContainer")
+  const pokemonButtons = document.querySelectorAll(".buttons");
+  const detailsContainer = document.querySelector("#detailsContainer");
 
   pokemonButtons.forEach(async function (button) {
-    const pokemonString = await fetch(`./api/pokemon/${button.id}`)
-    const pokemonJson = await pokemonString.json()
+    const pokemonString = await fetch(`./api/pokemon/${button.id}`);
+    const pokemonJson = await pokemonString.json();
     button.addEventListener("click", function () {
-      console.log(pokemonJson)
-      loadPokemonDetails(pokemonJson)
-    })
-  })
+      loadPokemonDetails(pokemonJson);
+    });
+  });
 
 
   function loadPokemonDetails(pokemonJson) {
@@ -25,8 +24,8 @@ window.addEventListener("load", function () {
     <p><strong>Types:</strong> ${pokemonJson.types}</p>
     <p><strong>About ${pokemonJson.name}:</strong> ${pokemonJson.dexEntry}</p>
     `
-  }
-})
+  };
+});
 
 //   }
 
