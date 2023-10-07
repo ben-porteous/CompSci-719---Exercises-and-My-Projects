@@ -23,7 +23,7 @@ window.addEventListener("load", function () {
     <img src="${pokemonJson.imageUrl}">
     <h1># ${pokemonJson.dexNumber} ${pokemonJson.name}</h1>
     <p><strong>Types:</strong> ${pokemonJson.types}</p>
-    <p><strong>About ${pokemonJson.name}:</strong> ${pokemonJson.dexExtry}</p>
+    <p><strong>About ${pokemonJson.name}:</strong> ${pokemonJson.dexEntry}</p>
     `
   }
 })
