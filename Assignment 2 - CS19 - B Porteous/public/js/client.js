@@ -4,4 +4,19 @@ window.addEventListener("load", function () {
   // in the appropriate place on the HTML page (overwriting any data which was already
   // there).
 
-});
+  const pokemonButtons = document.querySelectorAll(".buttons")
+
+  pokemonButtons.forEach(function(button) {
+    button.addEventListener("click", function(){
+      console.log("Button successful")
+    })
+  })
+})
+
+//   }
+
+//   // pokemonButtons.addEventListener("click", function() {
+//   //   console.log("Your Button Works!")
+//   // })
+
+// });
