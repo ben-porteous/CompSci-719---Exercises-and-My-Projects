@@ -31,7 +31,9 @@ router.get("/dexSearch", async function(req, res) {
     smallImageUrl: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${dexNumber}.png`,
     types: `${types}`
   }
+  
   res.json(requiredPokemonJson)
+  //Need to amend route handler to append requiredPokemonJson to pokemon.json file
 })
 
 module.exports = router;
