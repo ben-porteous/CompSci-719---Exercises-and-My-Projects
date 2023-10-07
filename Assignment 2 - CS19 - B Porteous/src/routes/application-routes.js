@@ -15,6 +15,8 @@ function writeJson(object, fileName) {
   fs.writeFileSync(fileName, JSON.stringify(object));
 }
 
+
+
 router.get("/", function (req, res) {
   // TODO Add necessary data to res.locals before rendering the "home" page.
   const pokemon = getAllPokemon();
@@ -28,6 +30,9 @@ router.get("/", function (req, res) {
 
   res.render("home");
 });
+
+
+
 
 router.get("/dexSearch", async function (req, res) {
   const dexNumber = req.query.newPokemonDex
@@ -55,7 +60,6 @@ router.get("/dexSearch", async function (req, res) {
     pokemonJsonFile.push(requiredPokemonJson)
     writeJson(pokemonJsonFile, "./src/json/pokemon.json")
   }
-
 
   res.redirect("/")
 })
