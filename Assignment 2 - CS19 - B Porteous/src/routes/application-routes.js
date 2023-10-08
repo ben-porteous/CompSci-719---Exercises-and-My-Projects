@@ -63,6 +63,22 @@ router.get("/dexSearch", async function (req, res) {
     writeJson(pokemonJsonFile, "./src/json/pokemon.json")
   }
 
+//Need to update the below - currently returns all applicable "en" and need to check index accuracy 
+  function getEnglishDex(pokemonJsonFile) {
+    let i = 0
+    pokemonDexExtryJson.flavor_text_entries.forEach(function (item) {
+      if (item.language.name == "en") {
+        i++
+        console.log(i)
+      } else {
+        i++
+      }
+    })
+  }
+
+  getEnglishDex(pokemonJsonFile)
+
+
   res.redirect("/")
 })
 
