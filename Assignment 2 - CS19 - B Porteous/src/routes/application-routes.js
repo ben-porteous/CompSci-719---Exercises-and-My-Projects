@@ -38,7 +38,8 @@ router.get("/dexSearch", async function (req, res) {
   const dexNumber = req.query.newPokemonDex
   const pokemonString = await fetch(`https://pokeapi.co/api/v2/pokemon/${dexNumber}`)
   const pokemonJson = await pokemonString.json()
-  // const pokemonDexEntryString = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${dexNumber}`)
+  const pokemonDexEntryString = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${dexNumber}`);
+  const pokemonDexExtryJson = await pokemonDexEntryString.json()
   const types = []
   pokemonJson.types.forEach(function (type) {
     types.push(type.type.name)
@@ -48,7 +49,8 @@ router.get("/dexSearch", async function (req, res) {
     name: `${pokemonJson.species.name}`,
     imageUrl: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${dexNumber}.png`,
     smallImageUrl: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${dexNumber}.png`,
-    types: `${types}`
+    types: `${types}`,
+    dexEntry: pokemonDexExtryJson.flavor_text_entries[0].flavor_text
   }
 
   const pokemonJsonFile = readJson("./src/json/pokemon.json")
