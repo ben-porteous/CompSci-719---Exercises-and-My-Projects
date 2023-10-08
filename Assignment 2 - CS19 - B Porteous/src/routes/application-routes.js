@@ -15,8 +15,20 @@ function writeJson(object, fileName) {
   fs.writeFileSync(fileName, JSON.stringify(object));
 }
 
+//Need to update the below - currently returns all applicable "en" and need to check index accuracy 
+function getEnglishDex(pokemonDexExtryJson) {
+  let i = 0
+  pokemonDexExtryJson.flavor_text_entries.forEach(function (item) {
+    if (item.language.name == "en") {
+      i++
+      return(i)
+    } else {
+      i++
+    }
+  })
+}
 
-
+//Router for Home Site
 router.get("/", function (req, res) {
   // TODO Add necessary data to res.locals before rendering the "home" page.
   const pokemon = getAllPokemon();
@@ -33,7 +45,7 @@ router.get("/", function (req, res) {
 
 
 
-
+//Function for processing dexNumber search data - returns user home
 router.get("/dexSearch", async function (req, res) {
   const dexNumber = req.query.newPokemonDex
   const pokemonString = await fetch(`https://pokeapi.co/api/v2/pokemon/${dexNumber}`)
@@ -59,24 +71,12 @@ router.get("/dexSearch", async function (req, res) {
   if (stringedDatabase.includes(dexNumber)) {
     console.log("This pokemon is already in the list")
   } else {
+    const testing232 = getEnglishDex(pokemonDexExtryJson) // Returns undefined rather than value
+    console.log(testing232) // as above - returns undefined rather than value
     pokemonJsonFile.push(requiredPokemonJson)
     writeJson(pokemonJsonFile, "./src/json/pokemon.json")
   }
 
-//Need to update the below - currently returns all applicable "en" and need to check index accuracy 
-  function getEnglishDex(pokemonJsonFile) {
-    let i = 0
-    pokemonDexExtryJson.flavor_text_entries.forEach(function (item) {
-      if (item.language.name == "en") {
-        i++
-        console.log(i)
-      } else {
-        i++
-      }
-    })
-  }
-
-  getEnglishDex(pokemonJsonFile)
 
 
   res.redirect("/")
