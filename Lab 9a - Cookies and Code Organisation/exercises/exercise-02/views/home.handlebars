@@ -1,0 +1,52 @@
+<div class="container">
+
+    {{! Display a toast message if one was provided. }}
+    {{#if toastMessage}}
+    <p>{{toastMessage}}</p>
+    {{/if}}
+
+    {{! Form for adding cookies }}
+    <h1>Add cookies</h1>
+    <form action="./addCookie" method="GET">
+        <div class="flex-col mb">
+            <label for="txtNewCookieName">Name:</label>
+            <input type="text" name="name" id="txtNewCookieName" required>
+        </div>
+
+        <div class="flex-col mb">
+            <label for="txtNewCookieValue">Value:</label>
+            <input type="text" name="value" id="txtNewCookieValue" required>
+        </div>
+
+        <div class="flex-row justify-sb align-center">
+            <button type="submit" id="btnAddCookie">Add cookie</button>
+        </div>
+    </form>
+
+    {{! Form for removing cookies }}
+    <h1>Remove cookies</h1>
+    <form action="./removeCookie" method="GET">
+        <div class="flex-col mb">
+            <label for="txtRemoveCookieName">Name:</label>
+            <input type="text" name="name" id="txtRemoveCookieName" required>
+        </div>
+
+        <div class="flex-row justify-sb align-center">
+            <button type="submit" id="btnRemoveCookie">Remove cookie</button>
+        </div>
+    </form>
+
+    {{! Form for getting cookies }}
+    <h1>Get cookies</h1>
+    <form action="./getCookie" method="GET">
+        <div class="flex-col mb">
+            <label for="txtGetCookieName">Name:</label>
+            <input type="text" name="name" id="txtGetCookieName" required>
+        </div>
+
+        <div class="flex-row justify-sb align-center">
+            <button type="submit" id="btnGetCookie">Get cookie</button>
+        </div>
+    </form>
+
+</div>

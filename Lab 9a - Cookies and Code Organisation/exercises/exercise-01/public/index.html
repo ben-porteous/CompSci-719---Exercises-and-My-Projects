@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Client Cookies</title>
+    <link rel="stylesheet" href="./css/site.css">
+    <script src="./js/client-cookie-helper.js"></script>
+    <script src="./js/exercise-01-client.js"></script>
+</head>
+
+<body>
+    <div class="container">
+
+        <!--Form for adding cookies-->
+        <h1>Add cookies</h1>
+        <div>
+            <div class="flex-col mb">
+                <label for="txtNewCookieName">Name:</label>
+                <input type="text" id="txtNewCookieName">
+            </div>
+
+            <div class="flex-col mb">
+                <label for="txtNewCookieValue">Value:</label>
+                <input type="text" id="txtNewCookieValue">
+            </div>
+
+            <div class="flex-row justify-sb align-center">
+                <button id="btnAddCookie">Add cookie</button>
+                <!--Result should be displayed in this span-->
+                <span id="addCookieResult"></span>
+            </div>
+        </div>
+
+        <!--Form for removing cookies-->
+        <h1>Remove cookies</h1>
+        <div>
+            <div class="flex-col mb">
+                <label for="txtRemoveCookieName">Name:</label>
+                <input type="text" id="txtRemoveCookieName">
+            </div>
+
+            <div class="flex-row justify-sb align-center">
+                <button id="btnRemoveCookie">Remove cookie</button>
+                <!--Result should be displayed in this span-->
+                <span id="removeCookieResult"></span>
+            </div>
+        </div>
+
+        <!--Form for getting cookies-->
+        <h1>Get cookies</h1>
+        <div>
+            <div class="flex-col mb">
+                <label for="txtGetCookieName">Name:</label>
+                <input type="text" id="txtGetCookieName">
+            </div>
+
+            <div class="flex-row justify-sb align-center">
+                <button id="btnGetCookie">Get cookie</button>
+                <!--Result should be displayed in this span-->
+                <span id="getCookieResult"></span>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
